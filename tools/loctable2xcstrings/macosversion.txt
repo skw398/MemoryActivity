@@ -1,0 +1,3 @@
+ProductName:		macOS
+ProductVersion:		14.7
+BuildVersion:		23H124

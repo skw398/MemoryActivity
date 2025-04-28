@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/skw398/MemoryActivity/main/project/Sparkle/appcast.xml</string>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUPublicEDKey</key>
+	<string>aexNY6/1M3jtZkkd5mbqhAvj/K3VHFl+QZM+xpPj8BE=</string>
+</dict>
+</plist>
