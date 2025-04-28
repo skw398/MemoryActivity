@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>MemoryActivity</title>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Mon, 28 Apr 2025 21:41:39 +0900</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.0/MemoryActivity.dmg" length="3183909" type="application/octet-stream" sparkle:edSignature="zeR9Hi/4jd50ddobeE98mN3TdTSxPPRRUi5YOM+WhRPgT0Xd/YQjTMOvNwAMhpjouqvKDErQuUt4zZaBwPnsDw=="/>
+        </item>
+    </channel>
+</rss>
