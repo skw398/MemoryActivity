@@ -83,6 +83,12 @@
             "value" : "Memoria de aplicaciones:"
           }
         },
+        "es_US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria de aplicaciones:"
+          }
+        },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -201,6 +207,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aplikačná pamäť:"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomnilnik aplikacije:"
           }
         },
         "sv" : {
@@ -345,6 +357,12 @@
             "value" : "Archivos en caché:"
           }
         },
+        "es_US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivos en caché:"
+          }
+        },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -465,6 +483,12 @@
             "value" : "Súbory v medzipamäti:"
           }
         },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predpomnjene datoteke:"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -582,6 +606,12 @@
           }
         },
         "es_419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprimido:"
+          }
+        },
+        "es_US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprimido:"
@@ -707,6 +737,12 @@
             "value" : "Komprimované:"
           }
         },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stisnjeno:"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -814,6 +850,12 @@
           }
         },
         "es_419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRESIÓN DE MEMORIA"
+          }
+        },
+        "es_US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRESIÓN DE MEMORIA"
@@ -939,6 +981,12 @@
             "value" : "ZAŤAŽENIE PAMÄTE"
           }
         },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OBREMENITEV POMNILNIKA"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1046,6 +1094,12 @@
           }
         },
         "es_419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria usada:"
+          }
+        },
+        "es_US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria usada:"
@@ -1171,6 +1225,12 @@
             "value" : "Použitá pamäť:"
           }
         },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uporabljeni pomnilnik:"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1288,6 +1348,12 @@
           }
         },
         "es_419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n/d"
+          }
+        },
+        "es_US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
@@ -1411,6 +1477,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nedostupné"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "brez"
           }
         },
         "sv" : {
@@ -1545,6 +1617,12 @@
             "value" : "Memoria física:"
           }
         },
+        "es_US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria física:"
+          }
+        },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1663,6 +1741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fyzická pamäť:"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fizični pomnilnik:"
           }
         },
         "sv" : {
@@ -1807,6 +1891,12 @@
             "value" : "Espacio de intercambio usado:"
           }
         },
+        "es_US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacio de intercambio usado:"
+          }
+        },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1925,6 +2015,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Využitý swap:"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poraba izmenjalnega prostora:"
           }
         },
         "sv" : {
@@ -2046,7 +2142,13 @@
         "es_419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Memoria física:"
+            "value" : "Memoria residente:"
+          }
+        },
+        "es_US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria residente:"
           }
         },
         "fi" : {
@@ -2167,6 +2269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pevná pamäť:"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Osrednji pomnilnik:"
           }
         },
         "sv" : {

@@ -1,3 +1,3 @@
 ProductName:		macOS
-ProductVersion:		14.7
-BuildVersion:		23H124
+ProductVersion:		15.4.1
+BuildVersion:		24E263
