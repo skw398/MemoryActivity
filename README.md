@@ -6,7 +6,7 @@ Memory pressure and stats from Activity Monitor — right in your menu bar!
 
 ## Installation
 
-Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/download/1.0.0/MemoryActivity.dmg)
+Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/download/1.0.1/MemoryActivity.dmg)
 
 - Requires macOS 14 Sonoma or later
 - Notarized by Apple
