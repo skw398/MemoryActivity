@@ -3,6 +3,21 @@
     <channel>
         <title>MemoryActivity</title>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Sat, 17 May 2025 09:58:04 +0900</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <description><![CDATA[
+                <ul>
+                    <li>Apply new macOS system localizations</li>
+                </ul>
+            ]]>
+            </description>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.1/MemoryActivity.dmg" length="3183744" type="application/octet-stream" sparkle:edSignature="DuHUmzmkkG9v+aRf98AqkZH5sXhYebRIlKIu0Nr/Z7v4b9tTS7tz3DxLN+j6XfUDSF8sEV2AeSRenFzouYWDCg=="/>
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Mon, 28 Apr 2025 21:41:39 +0900</pubDate>
             <sparkle:version>1</sparkle:version>
