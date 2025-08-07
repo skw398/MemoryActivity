@@ -56,12 +56,19 @@ do {
                         translations[key.xcstrings_key] = [:]
                     }
                     translations[key.xcstrings_key]?[code] = value
+                } else {
+                    print("Missing key: \(key.loctable_key) in \(path) for code: \(code)")
+                    exit(1)
                 }
             }
         }
     }
 
-    let xcstringsUrl = URL(fileURLWithPath: "./Localizable.xcstrings")
+    guard CommandLine.arguments.count > 1 else {
+        print("Missing argument: path to Localizable.xcstrings")
+        exit(1)
+    }
+    let xcstringsUrl = URL(fileURLWithPath: CommandLine.arguments[1])
 
     guard FileManager.default.fileExists(atPath: xcstringsUrl.path),
         let data = try? Data(contentsOf: xcstringsUrl),
@@ -94,7 +101,7 @@ do {
     let jsonData = try JSONSerialization.data(withJSONObject: xcstrings, options: [.prettyPrinted, .sortedKeys])
     try jsonData.write(to: xcstringsUrl)
 
-    print("File written to \(xcstringsUrl.path)")
+    print("✅ File written to \(xcstringsUrl.path)")
 } catch {
     print(error.localizedDescription)
 }
