@@ -26,10 +26,16 @@ struct AppSettings: View {
                             }
                         }
 
-                    Toggle("Automatically check for updates", isOn: $sparkle.automaticallyChecksForUpdates)
+                    Toggle(
+                        "Automatically check for updates",
+                        isOn: $sparkle.automaticallyChecksForUpdates
+                    )
 
-                    Toggle("Automatically download updates", isOn: $sparkle.automaticallyDownloadsUpdates)
-                        .disabled(!sparkle.automaticallyChecksForUpdates)
+                    Toggle(
+                        "Automatically download updates",
+                        isOn: $sparkle.automaticallyDownloadsUpdates
+                    )
+                    .disabled(!sparkle.automaticallyChecksForUpdates)
                 }
             }
 

@@ -37,7 +37,9 @@ import Sparkle
     override init() {
         super.init()
 
-        controller = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: self)
+        controller = SPUStandardUpdaterController(
+            startingUpdater: true, updaterDelegate: nil, userDriverDelegate: self
+        )
 
         controller.updater.publisher(for: \.automaticallyChecksForUpdates)
             .assign(to: \.automaticallyChecksForUpdates, on: self)

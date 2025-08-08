@@ -35,7 +35,9 @@ struct AppMenu: View {
             }
 
             Section {
-                if let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.ActivityMonitor") {
+                if let url = NSWorkspace.shared.urlForApplication(
+                    withBundleIdentifier: "com.apple.ActivityMonitor"
+                ) {
                     Button("Open Activity Monitor") {
                         NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
 

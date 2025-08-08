@@ -15,13 +15,16 @@ struct MemoryPressureGraph: View {
             var anchor: (point: CGPoint, data: Data)?
             for (i, target) in data.reversed().enumerated() {
                 let point = CGPoint(
-                    x: size.width - CGFloat(i) * dataPointWidth * size.width / CGFloat(maxDataCount - 1),
+                    x: size.width - CGFloat(i) * dataPointWidth * size.width
+                        / CGFloat(maxDataCount - 1),
                     y: size.height * (1 - CGFloat(target.value) / 100)
                 )
 
                 if let anchor {
                     let start = anchor.point
-                    let endXOffset = (anchor.data.level == target.level || i == data.count - 1) ? 0 : dataPointWidth / 2
+                    let endXOffset =
+                        (anchor.data.level == target.level || i == data.count - 1)
+                        ? 0 : dataPointWidth / 2
                     let end = CGPoint(x: point.x + endXOffset, y: point.y)
                     let color = Color(anchor.data.level.colorResource)
 
@@ -48,7 +51,9 @@ struct MemoryPressureGraph: View {
                         left.move(to: CGPoint(x: end.x, y: size.height))
                         left.addLine(to: CGPoint(x: end.x, y: point.y))
                         context.stroke(
-                            left, with: .color(color), lineWidth: lineWidth * (data.count == maxDataCount ? 2 : 1)
+                            left,
+                            with: .color(color),
+                            lineWidth: lineWidth * (data.count == maxDataCount ? 2 : 1)
                         )
                     }
 
