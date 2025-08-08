@@ -9,18 +9,20 @@ struct MemoryPressureGraph: View {
         Canvas { context, size in
             let data = memoryPressure.data
             let maxDataCount = memoryPressure.capacity
+            let dataPointWidth = 1.0
             let lineWidth = 0.75
 
             var anchor: (point: CGPoint, data: Data)?
             for (i, target) in data.reversed().enumerated() {
                 let point = CGPoint(
-                    x: size.width - CGFloat(i) * size.width / CGFloat(maxDataCount - 1),
+                    x: size.width - CGFloat(i) * dataPointWidth * size.width / CGFloat(maxDataCount - 1),
                     y: size.height * (1 - CGFloat(target.value) / 100)
                 )
 
                 if let anchor {
                     let start = anchor.point
-                    let end = (anchor.data.level == target.level) ? point : CGPoint(x: point.x + 0.5, y: point.y)
+                    let endXOffset = (anchor.data.level == target.level || i == data.count - 1) ? 0 : dataPointWidth / 2
+                    let end = CGPoint(x: point.x + endXOffset, y: point.y)
                     let color = Color(anchor.data.level.colorResource)
 
                     var area = Path()
