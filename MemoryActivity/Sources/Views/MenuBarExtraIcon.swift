@@ -3,7 +3,8 @@ import SwiftUI
 struct MenuBarExtraIcon: View {
     let model: Model
 
-    @AppStorage("showMemoryPressureIndicator") var showMemoryPressureIndicator = true
+    @AppStorage("showMemoryPressureIndicator")
+    var showMemoryPressureIndicator = true
 
     var body: some View {
         if showMemoryPressureIndicator {
@@ -15,7 +16,8 @@ struct MenuBarExtraIcon: View {
 }
 
 extension MenuBarExtraIcon {
-    @Observable class Model {
+    @Observable
+    class Model {
         typealias MemoryPressureLevel = MemoryData.MemoryPressure.Data.Level
 
         private(set) var memoryPressureLebel: MemoryPressureLevel?
@@ -42,8 +44,8 @@ extension MenuBarExtraIcon {
 #Preview {
     HStack {
         MenuBarExtraIcon(model: .init(memoryPressureLebel: nil))
-        ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) {
-            MenuBarExtraIcon(model: .init(memoryPressureLebel: $0))
+        ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
+            MenuBarExtraIcon(model: .init(memoryPressureLebel: level))
         }
     }
     .padding()
@@ -80,7 +82,8 @@ extension MemoryData.MemoryPressure.Data.Level {
 extension Image {
     fileprivate static let memorychip = Self(
         nsImage: NSImage(
-            systemSymbolName: "memorychip", accessibilityDescription: "Memory chip symbol"
+            systemSymbolName: "memorychip",
+            accessibilityDescription: "Memory chip symbol"
         )!.withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!
     )
 

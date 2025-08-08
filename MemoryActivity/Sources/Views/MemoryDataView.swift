@@ -54,30 +54,32 @@ extension LabeledContent where Label == Text, Content == Text {
     }
 }
 
-private struct MemoryDataViewStyle: LabeledContentStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            configuration.label
-            Spacer()
-            configuration.content
-                .monospacedDigit()
+extension MemoryDataView {
+    fileprivate struct MemoryDataViewStyle: LabeledContentStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            HStack {
+                configuration.label
+                Spacer()
+                configuration.content
+                    .monospacedDigit()
+            }
+            .padding(.horizontal, 4)
+            .font(.system(size: 10.5))
         }
-        .padding(.horizontal, 4)
-        .font(.system(size: 10.5))
     }
 }
 
 #Preview("LabeledContent+ByteCount") {
     VStack {
-        LabeledContent("Physical Memory:", byteCount: Int64(16 * 1024 * 1024 * 1024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1024 * 1024 * 1024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1024 * 1024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1024))
+        LabeledContent("Physical Memory:", byteCount: Int64(16 * 1_024 * 1_024 * 1_024))
+        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024 * 1_024 * 1_024))
+        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024 * 1_024))
+        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024))
         LabeledContent("Memory Used:", byteCount: Int64(123.45))
         LabeledContent("Memory Used:", byteCount: Int64(0))
         LabeledContent("Memory Used:", byteCount: nil)
     }
-    .labeledContentStyle(MemoryDataViewStyle())
+    .labeledContentStyle(MemoryDataView.MemoryDataViewStyle())
     .fixedSize()
     .padding()
 }

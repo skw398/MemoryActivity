@@ -1,6 +1,7 @@
 import SwiftUI
 
-@main struct MemoryActivityApp: App {
+@main
+struct MemoryActivityApp: App {
     let menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(
         memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67))
     )

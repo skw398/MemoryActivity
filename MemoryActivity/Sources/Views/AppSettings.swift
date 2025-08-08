@@ -1,11 +1,17 @@
 import SwiftUI
 
 struct AppSettings: View {
-    @AppStorage("showMemoryPressureIndicator") var showMemoryPressureIndicator = true
-    @Environment(OpenAtLogin.self) var openAtLogin
-    @Environment(Sparkle.self) var sparkle
+    @AppStorage("showMemoryPressureIndicator")
+    var showMemoryPressureIndicator = true
 
-    @Environment(KeyWindowObserver.self) var keyWindowObserver
+    @Environment(OpenAtLogin.self)
+    var openAtLogin
+
+    @Environment(Sparkle.self)
+    var sparkle
+
+    @Environment(KeyWindowObserver.self)
+    var keyWindowObserver
 
     var body: some View {
         @Bindable var openAtLogin = openAtLogin

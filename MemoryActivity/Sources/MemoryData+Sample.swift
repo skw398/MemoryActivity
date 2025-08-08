@@ -72,12 +72,12 @@ extension MemoryData {
             ],
             capacity: 67
         ),
-        physicalMemory: Int64(16.00 * 1024 * 1024 * 1024),
-        memoryUsed: Int64(12.26 * 1024 * 1024 * 1024),
-        appMemory: Int64(7.26 * 1024 * 1024 * 1024),
-        wiredMemory: Int64(3.35 * 1024 * 1024 * 1024),
-        compressed: Int64(819.3 * 1024 * 1024),
-        cachedFiles: Int64(3.12 * 1024 * 1024 * 1024),
+        physicalMemory: Int64(16.00 * 1_024 * 1_024 * 1_024),
+        memoryUsed: Int64(12.26 * 1_024 * 1_024 * 1_024),
+        appMemory: Int64(7.26 * 1_024 * 1_024 * 1_024),
+        wiredMemory: Int64(3.35 * 1_024 * 1_024 * 1_024),
+        compressed: Int64(819.3 * 1_024 * 1_024),
+        cachedFiles: Int64(3.12 * 1_024 * 1_024 * 1_024),
         swapUsed: Int64(0)
     )
 }

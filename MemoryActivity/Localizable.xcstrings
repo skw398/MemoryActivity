@@ -1281,6 +1281,16 @@
         }
       }
     },
+    "Menu" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニュー"
+          }
+        }
+      }
+    },
     "Menu Bar:" : {
       "localizations" : {
         "ja" : {

@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct AppMenu: View {
-    @Environment(\.openSettings) private var openSettings
+    @Environment(\.openSettings)
+    private var openSettings
 
-    @Environment(Sparkle.self) var sparkle
+    @Environment(Sparkle.self)
+    var sparkle
 
     var body: some View {
         Menu {
@@ -53,7 +55,8 @@ struct AppMenu: View {
                 .keyboardShortcut("q")
             }
         } label: {
-            Image(systemName: "ellipsis.circle")
+            Label("Menu", systemImage: "ellipsis.circle")
+                .labelStyle(.iconOnly)
         }
         .menuStyle(.borderlessButton)
         .fixedSize()

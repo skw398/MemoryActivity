@@ -1,7 +1,9 @@
 import Combine
 import Sparkle
 
-@MainActor @Observable class Sparkle: NSObject {
+@MainActor
+@Observable
+class Sparkle: NSObject {
     var automaticallyChecksForUpdates: Bool = false {
         didSet {
             guard automaticallyChecksForUpdates != oldValue else {
@@ -38,7 +40,9 @@ import Sparkle
         super.init()
 
         controller = SPUStandardUpdaterController(
-            startingUpdater: true, updaterDelegate: nil, userDriverDelegate: self
+            startingUpdater: true,
+            updaterDelegate: nil,
+            userDriverDelegate: self
         )
 
         controller.updater.publisher(for: \.automaticallyChecksForUpdates)
@@ -65,7 +69,9 @@ extension Sparkle: SPUStandardUserDriverDelegate {
     }
 
     nonisolated func standardUserDriverWillHandleShowingUpdate(
-        _ handleShowingUpdate: Bool, forUpdate update: SUAppcastItem, state: SPUUserUpdateState
+        _: Bool,
+        forUpdate _: SUAppcastItem,
+        state: SPUUserUpdateState
     ) {
         guard !state.userInitiated else {
             return

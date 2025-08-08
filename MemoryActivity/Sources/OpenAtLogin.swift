@@ -1,6 +1,8 @@
 import ServiceManagement
 
-@MainActor @Observable class OpenAtLogin {
+@MainActor
+@Observable
+class OpenAtLogin {
     var isOn: Bool {
         didSet {
             guard isOn != oldValue else {
@@ -8,7 +10,11 @@ import ServiceManagement
             }
 
             do {
-                try isOn ? service.register() : service.unregister()
+                if isOn {
+                    try service.register()
+                } else {
+                    try service.unregister()
+                }
             } catch {
                 print(error.localizedDescription)
             }

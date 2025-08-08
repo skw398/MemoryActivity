@@ -3,7 +3,8 @@ import SwiftUI
 struct MenuBarExtraWindowView: View {
     let model: Model
 
-    @Environment(KeyWindowObserver.self) private var keyWindowObserver
+    @Environment(KeyWindowObserver.self)
+    private var keyWindowObserver
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
@@ -26,7 +27,8 @@ struct MenuBarExtraWindowView: View {
 }
 
 extension MenuBarExtraWindowView {
-    @Observable class Model {
+    @Observable
+    class Model {
         private(set) var memoryData: MemoryData
 
         init(memoryData: MemoryData) {

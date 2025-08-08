@@ -56,7 +56,7 @@ extension MemoryData.Snapshot {
             )
         #else
             #if DEBUG
-                let physicalMemory = 192.0 * 1024 * 1024 * 1024
+                let physicalMemory = 192.0 * 1_024 * 1_024 * 1_024
 
                 return Self(
                     pressureValue: Int.random(in: 0...100),
