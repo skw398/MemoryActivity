@@ -1,3 +1,6 @@
+CODE_SIGN_IDENTITY = Apple Development
+CODE_SIGN_STYLE = Automatic
+DEVELOPMENT_TEAM = MX2B93FCVT
 LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/mabackend/DerivedData/mabackend/Build/Products/Release"
-SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/mabackend/DerivedData/mabackend/Build/Products/Release"
 OTHER_LDFLAGS = -lmabackend
+SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/mabackend/DerivedData/mabackend/Build/Products/Release"
