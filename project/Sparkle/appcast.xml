@@ -3,6 +3,22 @@
     <channel>
         <title>MemoryActivity</title>
         <item>
+            <title>1.0.2</title>
+            <pubDate>Sat, 09 Aug 2025 11:55:29 +0900</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <description><![CDATA[
+                <ul>
+                    <li>Update build environment to Xcode 16.4</li>
+                    <li>Update Sparkle package to 2.7.1</li>
+                    <li>Fix memory pressure graph layout</li>
+                </ul>
+            ]]></description>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.2/MemoryActivity.dmg" length="3175522" type="application/octet-stream" sparkle:edSignature="dIjTNpdNkUBr0pPfDxHuQDe3e3/ZvjaFTPCy8ykLMFafxAEO5Zz4tThXIAxgFWjPvDHDfzlAs+/PMtQBjZEOAg=="/>
+        </item>
+        <item>
             <title>1.0.1</title>
             <pubDate>Sat, 17 May 2025 09:58:04 +0900</pubDate>
             <sparkle:version>2</sparkle:version>
@@ -10,8 +26,7 @@
                 <ul>
                     <li>Apply new macOS system localizations</li>
                 </ul>
-            ]]>
-            </description>
+            ]]></description>
             <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
