@@ -22,7 +22,7 @@ extension MenuBarExtraIcon {
 
         private(set) var memoryPressureLebel: MemoryPressureLevel?
 
-        init(memoryPressureLebel: MemoryPressureLevel?) {
+        init(memoryPressureLebel: MemoryPressureLevel? = nil) {
             self.memoryPressureLebel = memoryPressureLebel
         }
 
@@ -43,7 +43,7 @@ extension MenuBarExtraIcon {
 
 #Preview {
     HStack {
-        MenuBarExtraIcon(model: .init(memoryPressureLebel: nil))
+        MenuBarExtraIcon(model: .init())
         ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
             MenuBarExtraIcon(model: .init(memoryPressureLebel: level))
         }

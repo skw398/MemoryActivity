@@ -2,10 +2,7 @@ import SwiftUI
 
 @main
 struct MemoryActivityApp: App {
-    let menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(
-        memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67))
-    )
-    let menuBarExtraIconModel = MenuBarExtraIcon.Model(memoryPressureLebel: nil)
+    let store = ModelStore.instance(.live)
 
     let keyWindowObserver = KeyWindowObserver()
     let openAtLogin = OpenAtLogin()
@@ -13,19 +10,13 @@ struct MemoryActivityApp: App {
 
     var body: some Scene {
         MenuBarExtra {
-            MenuBarExtraWindowView(model: menuBarExtraWindowViewModel)
+            MenuBarExtraWindowView(model: store.menuBarExtraWindowViewModel)
                 .environment(keyWindowObserver)
                 .environment(sparkle)
         } label: {
-            MenuBarExtraIcon(model: menuBarExtraIconModel)
+            MenuBarExtraIcon(model: store.menuBarExtraIconModel)
                 .onAppear {
                     keyWindowObserver.configure()
-                }
-                .task {
-                    for await snapshot in MemoryData.Snapshot.stream(every: .seconds(1)) {
-                        menuBarExtraWindowViewModel.update(with: snapshot)
-                        menuBarExtraIconModel.update(with: snapshot)
-                    }
                 }
         }
         .menuBarExtraStyle(.window)

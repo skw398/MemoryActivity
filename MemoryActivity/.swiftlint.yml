@@ -7,6 +7,7 @@ disabled_rules:
   - explicit_top_level_acl
   - explicit_type_interface
   - extension_access_modifier
+  - fatal_error_message
   - file_name
   - force_unwrapping
   - identifier_name
