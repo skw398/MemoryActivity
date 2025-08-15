@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "FA9DC9C2-B849-4BB9-965D-DE66BCA9F728",
+      "name" : "English",
+      "options" : {
+        "language" : "en"
+      }
+    },
+    {
+      "id" : "D7ABB244-96C9-4A05-B946-410288F0FBBA",
+      "name" : "Japanese",
+      "options" : {
+        "language" : "ja"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MemoryActivity.xcodeproj",
+      "identifier" : "B48FC1142DB3AEA900E212B2",
+      "name" : "MemoryActivity"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MemoryActivity.xcodeproj",
+        "identifier" : "1F6619AC2E4F63F7002B15E7",
+        "name" : "MemoryActivityTests"
+      }
+    }
+  ],
+  "version" : 1
+}

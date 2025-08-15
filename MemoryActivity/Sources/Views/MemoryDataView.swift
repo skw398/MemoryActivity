@@ -38,12 +38,6 @@ struct MemoryDataView: View {
     }
 }
 
-#Preview {
-    MemoryDataView(memoryData: .sample)
-        .frame(width: 198)
-        .padding(12)
-}
-
 extension LabeledContent where Label == Text, Content == Text {
     fileprivate init(_ titleKey: LocalizedStringKey, byteCount: Int64?) {
         if let byteCount {
@@ -69,17 +63,8 @@ extension MemoryDataView {
     }
 }
 
-#Preview("LabeledContent+ByteCount") {
-    VStack {
-        LabeledContent("Physical Memory:", byteCount: Int64(16 * 1_024 * 1_024 * 1_024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024 * 1_024 * 1_024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024 * 1_024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45 * 1_024))
-        LabeledContent("Memory Used:", byteCount: Int64(123.45))
-        LabeledContent("Memory Used:", byteCount: Int64(0))
-        LabeledContent("Memory Used:", byteCount: nil)
-    }
-    .labeledContentStyle(MemoryDataView.MemoryDataViewStyle())
-    .fixedSize()
-    .padding()
+#Preview {
+    MemoryDataView(memoryData: .sample)
+        .frame(width: 198)
+        .padding()
 }
