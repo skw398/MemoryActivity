@@ -34,6 +34,7 @@ extension MenuBarExtraIcon {
 
             let level = MemoryPressureLevel(rawValue: pressureLevel)!
 
+            // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when necessary.
             if level != memoryPressureLebel {
                 memoryPressureLebel = level
             }
