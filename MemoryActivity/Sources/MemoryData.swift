@@ -14,6 +14,10 @@ extension MemoryData {
         var data: [Data] = []
         var capacity: Int
 
+        init(capacity: Int) {
+            self.capacity = capacity
+        }
+
         mutating func append(_ data: Data) {
             self.data.append(data)
             if self.data.count > capacity {

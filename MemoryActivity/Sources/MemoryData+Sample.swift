@@ -81,3 +81,10 @@ extension MemoryData {
         swapUsed: Int64(0)
     )
 }
+
+extension MemoryData.MemoryPressure {
+    fileprivate init(data: [Data], capacity: Int) {
+        self.data = data
+        self.capacity = capacity
+    }
+}

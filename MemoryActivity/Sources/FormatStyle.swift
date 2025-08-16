@@ -6,7 +6,8 @@ struct MemoryActivityByteCountFormatStyle: FormatStyle {
     typealias FormatOutput = String
 
     func format(_ value: Int64) -> String {
-        // Use ByteCountFormatter instead of ByteCountFormatStyle to match Activity Monitor's display format.
+        // Use ByteCountFormatter instead of ByteCountFormatStyle to match Activity Monitor's
+        // display format.
         let formatter = ByteCountFormatter()
         formatter.countStyle = .memory
         formatter.allowsNonnumericFormatting = false

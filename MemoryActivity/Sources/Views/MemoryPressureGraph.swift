@@ -91,3 +91,10 @@ struct MemoryPressureGraph: View {
     }
     .padding()
 }
+
+extension MemoryData.MemoryPressure {
+    fileprivate init(data: [Data], capacity: Int) {
+        self.data = data
+        self.capacity = capacity
+    }
+}

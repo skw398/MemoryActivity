@@ -16,6 +16,7 @@ struct MenuBarExtraIcon: View {
 }
 
 extension MenuBarExtraIcon {
+    @MainActor
     @Observable
     class Model {
         typealias MemoryPressureLevel = MemoryData.MemoryPressure.Data.Level
@@ -34,29 +35,13 @@ extension MenuBarExtraIcon {
 
             let level = MemoryPressureLevel(rawValue: pressureLevel)!
 
-            // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when necessary.
+            // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when
+            // necessary.
             if level != memoryPressureLebel {
                 memoryPressureLebel = level
             }
         }
     }
-}
-
-#Preview {
-    HStack {
-        MenuBarExtraIcon(model: .init())
-        ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
-            MenuBarExtraIcon(model: .init(memoryPressureLebel: level))
-        }
-    }
-    .padding()
-    .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": true]))
-}
-
-#Preview("Hide memory pressure lebel") {
-    MenuBarExtraIcon(model: .init(memoryPressureLebel: .normal))
-        .padding()
-        .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": false]))
 }
 
 extension MemoryData.MemoryPressure.Data.Level {
@@ -92,4 +77,21 @@ extension Image {
         nsImage: NSImage(resource: .customMemorychipBadgeQuestionmark)
             .withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!
     )
+}
+
+#Preview {
+    HStack {
+        MenuBarExtraIcon(model: .init())
+        ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
+            MenuBarExtraIcon(model: .init(memoryPressureLebel: level))
+        }
+    }
+    .padding()
+    .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": true]))
+}
+
+#Preview("Hide memory pressure lebel") {
+    MenuBarExtraIcon(model: .init(memoryPressureLebel: .normal))
+        .padding()
+        .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": false]))
 }

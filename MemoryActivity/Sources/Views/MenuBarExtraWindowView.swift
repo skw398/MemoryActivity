@@ -19,6 +19,7 @@ struct MenuBarExtraWindowView: View {
 }
 
 extension MenuBarExtraWindowView {
+    @MainActor
     @Observable
     class Model {
         private(set) var memoryData: MemoryData
@@ -38,7 +39,8 @@ extension MenuBarExtraWindowView {
         let memoryData: MemoryData
 
         var body: some View {
-            // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when necessary.
+            // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when
+            // necessary.
             Gate { MemoryDataView(memoryData: $0 ? memoryData : .empty) }
         }
     }
@@ -86,12 +88,30 @@ extension MenuBarExtraWindowView.MemoryDataViewContainer {
     }
 }
 
+extension MemoryData {
+    @MainActor
+    fileprivate mutating func update(with snapshot: Snapshot) {
+        if let value = snapshot.pressureValue, let level = snapshot.pressureLevel {
+            guard let level = MemoryPressure.Data.Level(rawValue: level) else {
+                fatalError()
+            }
+
+            memoryPressure.append(MemoryPressure.Data(value: value, level: level))
+        }
+        physicalMemory = snapshot.physicalMemory
+        memoryUsed = snapshot.memoryUsed
+        appMemory = snapshot.appMemory
+        wiredMemory = snapshot.wiredMemory
+        compressed = snapshot.compressed
+        cachedFiles = snapshot.cachedFiles
+        swapUsed = snapshot.swapUsed
+    }
+
+    fileprivate static let empty = Self(memoryPressure: .init(capacity: 0))
+}
+
 #Preview {
     MenuBarExtraWindowView(model: .init(memoryData: .sample))
         .environment(KeyWindowObserver.preview)
         .environment(Sparkle())
-}
-
-extension MemoryData {
-    fileprivate static let empty = Self(memoryPressure: .init(capacity: 0))
 }
