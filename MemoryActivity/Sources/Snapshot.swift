@@ -1,5 +1,7 @@
 #if canImport(mabackend)
     import mabackend
+
+    private let backend = mabackend.instance
 #endif
 
 extension MemoryData {
@@ -41,7 +43,7 @@ extension MemoryData {
 extension MemoryData.Snapshot {
     static func get() -> Self {
         #if canImport(mabackend)
-            let snapshot = mabackend.getSnapshot()
+            let snapshot = backend.get()
 
             return Self(
                 pressureValue: snapshot.pressureValue,
