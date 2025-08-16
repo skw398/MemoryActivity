@@ -1,8 +1,6 @@
-#if canImport(mabackend)
-    import mabackend
+import mabackend
 
-    private let backend = mabackend.instance
-#endif
+private let backend = mabackend.instance
 
 extension MemoryData {
     struct Snapshot {
@@ -15,6 +13,22 @@ extension MemoryData {
         var compressed: Int64?
         var cachedFiles: Int64?
         var swapUsed: Int64?
+
+        static func get() -> Self {
+            let snapshot = backend.get()
+
+            return .init(
+                pressureValue: snapshot.pressureValue,
+                pressureLevel: snapshot.pressureLevel,
+                physicalMemory: snapshot.physicalMemory,
+                memoryUsed: snapshot.memoryUsed,
+                appMemory: snapshot.appMemory,
+                wiredMemory: snapshot.wiredMemory,
+                compressed: snapshot.compressed,
+                cachedFiles: snapshot.cachedFiles,
+                swapUsed: snapshot.swapUsed
+            )
+        }
 
         private init(
             pressureValue: Int?,
@@ -37,44 +51,6 @@ extension MemoryData {
             self.cachedFiles = cachedFiles
             self.swapUsed = swapUsed
         }
-    }
-}
-
-extension MemoryData.Snapshot {
-    static func get() -> Self {
-        #if canImport(mabackend)
-            let snapshot = backend.get()
-
-            return Self(
-                pressureValue: snapshot.pressureValue,
-                pressureLevel: snapshot.pressureLevel,
-                physicalMemory: snapshot.physicalMemory,
-                memoryUsed: snapshot.memoryUsed,
-                appMemory: snapshot.appMemory,
-                wiredMemory: snapshot.wiredMemory,
-                compressed: snapshot.compressed,
-                cachedFiles: snapshot.cachedFiles,
-                swapUsed: snapshot.swapUsed
-            )
-        #else
-            #if DEBUG
-                let physicalMemory = 192.0 * 1_024 * 1_024 * 1_024
-
-                return Self(
-                    pressureValue: Int.random(in: 0...100),
-                    pressureLevel: Int.random(in: 0...2),
-                    physicalMemory: Int64(physicalMemory),
-                    memoryUsed: Int64(physicalMemory * Double.random(in: 0...1)),
-                    appMemory: Int64(physicalMemory * Double.random(in: 0...1)),
-                    wiredMemory: Int64(physicalMemory * Double.random(in: 0...1)),
-                    compressed: Int64(physicalMemory * Double.random(in: 0...1)),
-                    cachedFiles: Int64(physicalMemory * Double.random(in: 0...1)),
-                    swapUsed: Int64(physicalMemory * Double.random(in: 0...1))
-                )
-            #else
-                preconditionFailure()
-            #endif
-        #endif
     }
 }
 

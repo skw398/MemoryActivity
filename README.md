@@ -16,5 +16,3 @@ Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/
 
 1. Open `MemoryActivity.xcodeproj` in Xcode
 1. Run
-
-Debug build returns dummy data. Release build is not available now.

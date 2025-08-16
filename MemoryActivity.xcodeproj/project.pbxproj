@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4AF6232E50B7AA00CE2986 /* libmabackend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4AF6222E50B7A800CE2986 /* libmabackend.a */; };
+		1F4AFA1A2E50DE8F00CE2986 /* libmabackend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4AF6222E50B7A800CE2986 /* libmabackend.a */; };
 		B476E0E72DB4F45E0092B9CF /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B476E0E62DB4F45E0092B9CF /* Sparkle */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F4AF6222E50B7A800CE2986 /* libmabackend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmabackend.a; path = libmabackend/libmabackend.a; sourceTree = "<group>"; };
 		1F6619AD2E4F63F7002B15E7 /* MemoryActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48FC1152DB3AEA900E212B2 /* MemoryActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4AFA1A2E50DE8F00CE2986 /* libmabackend.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4AF6232E50B7AA00CE2986 /* libmabackend.a in Frameworks */,
 				B476E0E72DB4F45E0092B9CF /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,11 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4AF6212E50B7A800CE2986 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F4AF6222E50B7A800CE2986 /* libmabackend.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B48FC10C2DB3AEA900E212B2 = {
 			isa = PBXGroup;
 			children = (
 				B48FC1172DB3AEA900E212B2 /* MemoryActivity */,
 				1F6619AE2E4F63F7002B15E7 /* MemoryActivityTests */,
+				1F4AF6212E50B7A800CE2986 /* Frameworks */,
 				B48FC1162DB3AEA900E212B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -232,12 +246,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libmabackend",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryActivity";
 			};
@@ -251,12 +270,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libmabackend",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryActivity";
 			};
@@ -405,12 +429,17 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libmabackend",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
@@ -438,12 +467,17 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libmabackend",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
