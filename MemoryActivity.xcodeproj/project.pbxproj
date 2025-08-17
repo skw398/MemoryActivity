@@ -182,7 +182,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B476E0E52DB4F45E0092B9CF /* XCRemoteSwiftPackageReference "Sparkle" */,
-				1FE4E3F62E46364A00E46D0C /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B48FC1162DB3AEA900E212B2 /* Products */;
@@ -515,14 +514,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1FE4E3F62E46364A00E46D0C /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.59.1;
-			};
-		};
 		B476E0E52DB4F45E0092B9CF /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";

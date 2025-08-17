@@ -28,8 +28,10 @@ extension KeyWindowObserver {
     static let preview = {
         let observer = KeyWindowObserver()
         observer.value = NSWindow()
-        // swiftlint:disable:next no_empty_block
-        observer.observation = NSApp.observe(\.keyWindow) { _, _ in }
+        observer.observation = NSApp.observe(\.keyWindow) { _, _ in
+            //
+        }
+
         return observer
     }()
 }
