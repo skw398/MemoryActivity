@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,20 +58,16 @@
 /* Begin PBXFrameworksBuildPhase section */
 		1F6619AA2E4F63F7002B15E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				1F4AFA1A2E50DE8F00CE2986 /* libmabackend.a in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B48FC1122DB3AEA900E212B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				1F4AF6232E50B7AA00CE2986 /* libmabackend.a in Frameworks */,
 				B476E0E72DB4F45E0092B9CF /* Sparkle in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -123,8 +119,6 @@
 				1F6619AE2E4F63F7002B15E7 /* MemoryActivityTests */,
 			);
 			name = MemoryActivityTests;
-			packageProductDependencies = (
-			);
 			productName = MemoryActivityTests;
 			productReference = 1F6619AD2E4F63F7002B15E7 /* MemoryActivityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -138,8 +132,6 @@
 				B48FC1132DB3AEA900E212B2 /* Resources */,
 			);
 			buildRules = (
-			);
-			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
 				B48FC1172DB3AEA900E212B2 /* MemoryActivity */,
@@ -183,7 +175,7 @@
 			packageReferences = (
 				B476E0E52DB4F45E0092B9CF /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = B48FC1162DB3AEA900E212B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,34 +189,26 @@
 /* Begin PBXResourcesBuildPhase section */
 		1F6619AB2E4F63F7002B15E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B48FC1132DB3AEA900E212B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F6619A92E4F63F7002B15E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B48FC1112DB3AEA900E212B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -237,7 +221,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1F6619B32E4F63F7002B15E7 /* Debug */ = {
+		1F6619B32E4F63F7002B15E7 /* Debug configuration for PBXNativeTarget "MemoryActivityTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -260,7 +244,7 @@
 			};
 			name = Debug;
 		};
-		1F6619B42E4F63F7002B15E7 /* Release */ = {
+		1F6619B42E4F63F7002B15E7 /* Release configuration for PBXNativeTarget "MemoryActivityTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -283,7 +267,7 @@
 			};
 			name = Release;
 		};
-		B48FC1222DB3AEAA00E212B2 /* Debug */ = {
+		B48FC1222DB3AEAA00E212B2 /* Debug configuration for PBXProject "MemoryActivity" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +336,7 @@
 			};
 			name = Debug;
 		};
-		B48FC1232DB3AEAA00E212B2 /* Release */ = {
+		B48FC1232DB3AEAA00E212B2 /* Release configuration for PBXProject "MemoryActivity" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -413,7 +397,7 @@
 			};
 			name = Release;
 		};
-		B48FC1252DB3AEAA00E212B2 /* Debug */ = {
+		B48FC1252DB3AEAA00E212B2 /* Debug configuration for PBXNativeTarget "MemoryActivity" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -447,7 +431,7 @@
 			};
 			name = Debug;
 		};
-		B48FC1262DB3AEAA00E212B2 /* Release */ = {
+		B48FC1262DB3AEAA00E212B2 /* Release configuration for PBXNativeTarget "MemoryActivity" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = B48FC1172DB3AEA900E212B2 /* MemoryActivity */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -489,28 +473,25 @@
 		1F6619B52E4F63F7002B15E7 /* Build configuration list for PBXNativeTarget "MemoryActivityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F6619B32E4F63F7002B15E7 /* Debug */,
-				1F6619B42E4F63F7002B15E7 /* Release */,
+				1F6619B32E4F63F7002B15E7 /* Debug configuration for PBXNativeTarget "MemoryActivityTests" */,
+				1F6619B42E4F63F7002B15E7 /* Release configuration for PBXNativeTarget "MemoryActivityTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B48FC1102DB3AEA900E212B2 /* Build configuration list for PBXProject "MemoryActivity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B48FC1222DB3AEAA00E212B2 /* Debug */,
-				B48FC1232DB3AEAA00E212B2 /* Release */,
+				B48FC1222DB3AEAA00E212B2 /* Debug configuration for PBXProject "MemoryActivity" */,
+				B48FC1232DB3AEAA00E212B2 /* Release configuration for PBXProject "MemoryActivity" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B48FC1242DB3AEAA00E212B2 /* Build configuration list for PBXNativeTarget "MemoryActivity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B48FC1252DB3AEAA00E212B2 /* Debug */,
-				B48FC1262DB3AEAA00E212B2 /* Release */,
+				B48FC1252DB3AEAA00E212B2 /* Debug configuration for PBXNativeTarget "MemoryActivity" */,
+				B48FC1262DB3AEAA00E212B2 /* Release configuration for PBXNativeTarget "MemoryActivity" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
