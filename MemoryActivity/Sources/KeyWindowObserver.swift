@@ -10,18 +10,6 @@ class KeyWindowObserver {
     @ObservationIgnored private var observation: NSKeyValueObservation?
 
     private init() {
-        //
-    }
-
-    deinit {
-        fatalError()
-    }
-
-    func configure() {
-        guard observation == nil else {
-            return
-        }
-
         observation = NSApp.observe(\.keyWindow) { [weak self] app, _ in
             guard let self else {
                 return
@@ -31,5 +19,9 @@ class KeyWindowObserver {
                 value = app.keyWindow
             }
         }
+    }
+
+    deinit {
+        fatalError()
     }
 }

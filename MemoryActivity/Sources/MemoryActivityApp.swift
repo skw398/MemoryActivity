@@ -2,10 +2,12 @@ import SwiftUI
 
 @main
 struct MemoryActivityApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate
+
     let store: ModelStore
 
     init() {
-        _ = KeyWindowObserver.instance
         _ = OpenAtLogin.instance
         _ = Sparkle.instance
 
@@ -17,14 +19,19 @@ struct MemoryActivityApp: App {
             MenuBarExtraWindowView(model: store.menuBarExtraWindowViewModel)
         } label: {
             MenuBarExtraIcon(model: store.menuBarExtraIconModel)
-                .onAppear {
-                    KeyWindowObserver.instance.configure()
-                }
         }
         .menuBarExtraStyle(.window)
 
         Settings {
             AppSettings()
+        }
+    }
+}
+
+extension MemoryActivityApp {
+    class AppDelegate: NSObject, NSApplicationDelegate {
+        func applicationDidFinishLaunching(_: Notification) {
+            _ = KeyWindowObserver.instance
         }
     }
 }
