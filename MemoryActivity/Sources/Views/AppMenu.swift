@@ -4,9 +4,6 @@ struct AppMenu: View {
     @Environment(\.openSettings)
     private var openSettings
 
-    @Environment(Sparkle.self)
-    var sparkle
-
     var body: some View {
         Menu {
             Section {
@@ -20,10 +17,12 @@ struct AppMenu: View {
                 Button("Check for Updates…") {
                     NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
 
-                    sparkle.checkForUpdates()
+                    Sparkle.instance.checkForUpdates()
                 }
-                .badge(sparkle.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil)
-                .disabled(!sparkle.canCheckForUpdates)
+                .badge(
+                    Sparkle.instance.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil
+                )
+                .disabled(!Sparkle.instance.canCheckForUpdates)
             }
 
             Section {
@@ -66,5 +65,4 @@ struct AppMenu: View {
 #Preview {
     AppMenu()
         .padding()
-        .environment(Sparkle())
 }

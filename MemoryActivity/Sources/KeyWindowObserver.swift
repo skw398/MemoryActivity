@@ -3,9 +3,19 @@ import AppKit
 @MainActor
 @Observable
 class KeyWindowObserver {
+    static let instance = KeyWindowObserver()
+
     private(set) var value: NSWindow?
 
     @ObservationIgnored private var observation: NSKeyValueObservation?
+
+    private init() {
+        //
+    }
+
+    deinit {
+        fatalError()
+    }
 
     func configure() {
         guard observation == nil else {
@@ -22,16 +32,4 @@ class KeyWindowObserver {
             }
         }
     }
-}
-
-extension KeyWindowObserver {
-    static let preview = {
-        let observer = KeyWindowObserver()
-        observer.value = NSWindow()
-        observer.observation = NSApp.observe(\.keyWindow) { _, _ in
-            //
-        }
-
-        return observer
-    }()
 }

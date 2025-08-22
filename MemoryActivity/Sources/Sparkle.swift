@@ -4,6 +4,8 @@ import Sparkle
 @MainActor
 @Observable
 class Sparkle: NSObject {
+    static let instance = Sparkle()
+
     var automaticallyChecksForUpdates: Bool = false {
         didSet {
             guard automaticallyChecksForUpdates != oldValue else {
@@ -36,7 +38,7 @@ class Sparkle: NSObject {
 
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
 
-    override init() {
+    override private init() {
         super.init()
 
         controller = SPUStandardUpdaterController(
@@ -56,6 +58,10 @@ class Sparkle: NSObject {
         controller.updater.publisher(for: \.canCheckForUpdates)
             .assign(to: \.canCheckForUpdates, on: self)
             .store(in: &cancellables)
+    }
+
+    deinit {
+        fatalError()
     }
 
     func checkForUpdates() {

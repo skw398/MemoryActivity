@@ -4,18 +4,9 @@ struct AppSettings: View {
     @AppStorage("showMemoryPressureIndicator")
     var showMemoryPressureIndicator = true
 
-    @Environment(OpenAtLogin.self)
-    var openAtLogin
-
-    @Environment(Sparkle.self)
-    var sparkle
-
-    @Environment(KeyWindowObserver.self)
-    var keyWindowObserver
-
     var body: some View {
-        @Bindable var openAtLogin = openAtLogin
-        @Bindable var sparkle = sparkle
+        @Bindable var openAtLogin = OpenAtLogin.instance
+        @Bindable var sparkle = Sparkle.instance
 
         Form {
             LabeledContent("Menu Bar:") {
@@ -26,7 +17,7 @@ struct AppSettings: View {
             LabeledContent("Application:") {
                 VStack(alignment: .leading) {
                     Toggle("Open at login", isOn: $openAtLogin.isOn)
-                        .onChange(of: keyWindowObserver.value) { _, keyWindow in
+                        .onChange(of: KeyWindowObserver.instance.value) { _, keyWindow in
                             if keyWindow != nil {
                                 openAtLogin.refresh()
                             }
@@ -58,7 +49,4 @@ struct AppSettings: View {
 
 #Preview {
     AppSettings()
-        .environment(KeyWindowObserver.preview)
-        .environment(OpenAtLogin())
-        .environment(Sparkle())
 }

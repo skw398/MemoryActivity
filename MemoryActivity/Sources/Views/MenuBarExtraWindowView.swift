@@ -76,13 +76,10 @@ extension MenuBarExtraWindowView.MemoryDataViewContainer {
 
         @available(macOS, deprecated: 15)
         private struct KeyWindowBased: View {
-            @Environment(KeyWindowObserver.self)
-            private var keyWindowObserver
-
             var content: (_: Bool) -> Content
 
             var body: some View {
-                content(keyWindowObserver.value != nil)
+                content(KeyWindowObserver.instance.value != nil)
             }
         }
     }
@@ -112,6 +109,4 @@ extension MemoryData {
 
 #Preview {
     MenuBarExtraWindowView(model: .init(memoryData: .sample))
-        .environment(KeyWindowObserver.preview)
-        .environment(Sparkle())
 }

@@ -3,6 +3,8 @@ import ServiceManagement
 @MainActor
 @Observable
 class OpenAtLogin {
+    static let instance = OpenAtLogin()
+
     var isOn: Bool {
         didSet {
             guard isOn != oldValue else {
@@ -25,8 +27,12 @@ class OpenAtLogin {
 
     private let service = SMAppService.mainApp
 
-    init() {
+    private init() {
         isOn = service.status == .enabled
+    }
+
+    deinit {
+        fatalError()
     }
 
     func refresh() {
