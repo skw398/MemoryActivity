@@ -1,5 +1,6 @@
 import AppKit
 
+@available(macOS, deprecated: 15)
 @MainActor
 @Observable
 class KeyWindowObserver {

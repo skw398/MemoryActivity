@@ -17,8 +17,10 @@ struct AppSettings: View {
             LabeledContent("Application:") {
                 VStack(alignment: .leading) {
                     Toggle("Open at login", isOn: $openAtLogin.isOn)
-                        .onChange(of: KeyWindowObserver.instance.value) { _, keyWindow in
-                            if keyWindow != nil {
+                        .task {
+                            for await _ in NotificationCenter.default.voids(
+                                named: NSWindow.didBecomeKeyNotification
+                            ) {
                                 openAtLogin.refresh()
                             }
                         }
