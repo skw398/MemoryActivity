@@ -7,8 +7,8 @@ struct MenuBarExtraIcon: View {
     var showMemoryPressureIndicator = true
 
     var body: some View {
-        if showMemoryPressureIndicator {
-            model.memoryPressureLebel?.memorychipBadge ?? .memorychipBadgeQuestionmark
+        if showMemoryPressureIndicator, let level = model.memoryPressureLebel {
+            level.memorychipBadge
         } else {
             Image.memorychip
         }
@@ -72,11 +72,6 @@ extension Image {
             accessibilityDescription: "Memory chip symbol"
         )!.withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!
     )
-
-    fileprivate static let memorychipBadgeQuestionmark = Self(
-        nsImage: NSImage(resource: .customMemorychipBadgeQuestionmark)
-            .withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!
-    )
 }
 
 #Preview {
@@ -88,10 +83,4 @@ extension Image {
     }
     .padding()
     .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": true]))
-}
-
-#Preview("Hide memory pressure lebel") {
-    MenuBarExtraIcon(model: .init(memoryPressureLebel: .normal))
-        .padding()
-        .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": false]))
 }
