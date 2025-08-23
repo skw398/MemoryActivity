@@ -56,8 +56,8 @@ extension MemoryData.MemoryPressure.Data.Level {
                 NSImage.SymbolConfiguration()
                     .applying(.init(scale: .large))
                     .applying(
-                        .init(paletteColors: [NSColor(resource: level.colorResource), .textColor])
-                    )
+                        .init(paletteColors: [NSColor(resource: level.colorResource), .textColor]),
+                    ),
             )!
             result[level] = Image(nsImage: image)
         }
@@ -69,8 +69,8 @@ extension Image {
     fileprivate static let memorychip = Self(
         nsImage: NSImage(
             systemSymbolName: "memorychip",
-            accessibilityDescription: "Memory chip symbol"
-        )!.withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!
+            accessibilityDescription: "Memory chip symbol",
+        )!.withSymbolConfiguration(NSImage.SymbolConfiguration(scale: .large))!,
     )
 }
 

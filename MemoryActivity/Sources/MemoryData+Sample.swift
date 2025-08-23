@@ -70,7 +70,7 @@ extension MemoryData {
                 .init(value: 22, level: .normal),
                 .init(value: 22, level: .normal),
             ],
-            capacity: 67
+            capacity: 67,
         ),
         physicalMemory: Int64(16.00 * 1_024 * 1_024 * 1_024),
         memoryUsed: Int64(12.26 * 1_024 * 1_024 * 1_024),
@@ -78,7 +78,7 @@ extension MemoryData {
         wiredMemory: Int64(3.35 * 1_024 * 1_024 * 1_024),
         compressed: Int64(819.3 * 1_024 * 1_024),
         cachedFiles: Int64(3.12 * 1_024 * 1_024 * 1_024),
-        swapUsed: Int64(0)
+        swapUsed: Int64(0),
     )
 }
 

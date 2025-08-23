@@ -20,7 +20,7 @@ class ModelStore {
         switch mode {
         case .live:
             menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(
-                memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67))
+                memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67)),
             )
             menuBarExtraIconModel = MenuBarExtraIcon.Model()
 
@@ -39,7 +39,7 @@ class ModelStore {
 
             menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(memoryData: sample)
             menuBarExtraIconModel = MenuBarExtraIcon.Model(
-                memoryPressureLebel: sample.memoryPressure.data.last?.level
+                memoryPressureLebel: sample.memoryPressure.data.last?.level,
             )
         }
     }

@@ -17,7 +17,7 @@ struct MemoryPressureGraph: View {
             for (i, target) in data.reversed().enumerated() {
                 let point = CGPoint(
                     x: size.width - CGFloat(i) * unitWidth,
-                    y: size.height * (1 - CGFloat(target.value) / 100)
+                    y: size.height * (1 - CGFloat(target.value) / 100),
                 )
 
                 if let anchor {
@@ -36,7 +36,7 @@ struct MemoryPressureGraph: View {
                     let shading = GraphicsContext.Shading.linearGradient(
                         Gradient(colors: [color.opacity(0.4), color.opacity(0.35)]),
                         startPoint: CGPoint(x: start.x, y: start.y),
-                        endPoint: CGPoint(x: start.x, y: size.height)
+                        endPoint: CGPoint(x: start.x, y: size.height),
                     )
                     context.fill(area, with: shading)
 
@@ -52,7 +52,7 @@ struct MemoryPressureGraph: View {
                         context.stroke(
                             left,
                             with: .color(color),
-                            lineWidth: lineWidth * (data.count == maxDataCount ? 2 : 1)
+                            lineWidth: lineWidth * (data.count == maxDataCount ? 2 : 1),
                         )
                     }
 
@@ -82,8 +82,8 @@ struct MemoryPressureGraph: View {
             MemoryPressureGraph(
                 memoryPressure: MemoryData.MemoryPressure(
                     data: MemoryData.sample.memoryPressure.data.suffix(50),
-                    capacity: MemoryData.sample.memoryPressure.data.capacity
-                )
+                    capacity: MemoryData.sample.memoryPressure.data.capacity,
+                ),
             )
         }
         .frame(width: 198, height: 58)

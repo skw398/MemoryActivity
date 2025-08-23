@@ -44,7 +44,7 @@ class Sparkle: NSObject {
         controller = SPUStandardUpdaterController(
             startingUpdater: true,
             updaterDelegate: nil,
-            userDriverDelegate: self
+            userDriverDelegate: self,
         )
 
         controller.updater.publisher(for: \.automaticallyChecksForUpdates)
@@ -77,7 +77,7 @@ extension Sparkle: SPUStandardUserDriverDelegate {
     nonisolated func standardUserDriverWillHandleShowingUpdate(
         _: Bool,
         forUpdate _: SUAppcastItem,
-        state: SPUUserUpdateState
+        state: SPUUserUpdateState,
     ) {
         guard !state.userInitiated else {
             return

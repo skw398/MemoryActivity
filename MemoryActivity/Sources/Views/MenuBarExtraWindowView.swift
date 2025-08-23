@@ -12,7 +12,7 @@ struct MenuBarExtraWindowView: View {
             MemoryDataView(
                 memoryData: macOS15Available
                     ? isVisible ? model.memoryData : .empty
-                    : KeyWindowObserver.instance.value != nil ? model.memoryData : .empty
+                    : KeyWindowObserver.instance.value != nil ? model.memoryData : .empty,
             )
             .padding(macOS26Available ? 8 : 6)
             .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))

@@ -24,12 +24,12 @@ struct AppMenu: View {
                 } label: {
                     Label(
                         "Check for Updates…",
-                        systemImage: "arrow.trianglehead.2.clockwise.rotate.90"
+                        systemImage: "arrow.trianglehead.2.clockwise.rotate.90",
                     )
                     .labelStyle(.osAdaptiveMenuItem)
                 }
                 .badge(
-                    Sparkle.instance.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil
+                    Sparkle.instance.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil,
                 )
                 .disabled(!Sparkle.instance.canCheckForUpdates)
             }
@@ -49,7 +49,7 @@ struct AppMenu: View {
 
             Section {
                 if let url = NSWorkspace.shared.urlForApplication(
-                    withBundleIdentifier: "com.apple.ActivityMonitor"
+                    withBundleIdentifier: "com.apple.ActivityMonitor",
                 ) {
                     Button("Open Activity Monitor") {
                         NSApp.menuBarExtraStatusItem?.button?.performClickSilently()

@@ -19,7 +19,7 @@ struct AppSettings: View {
                     Toggle("Open at login", isOn: $openAtLogin.isOn)
                         .task {
                             for await _ in NotificationCenter.default.voids(
-                                named: NSWindow.didBecomeKeyNotification
+                                named: NSWindow.didBecomeKeyNotification,
                             ) {
                                 openAtLogin.refresh()
                             }
@@ -27,12 +27,12 @@ struct AppSettings: View {
 
                     Toggle(
                         "Automatically check for updates",
-                        isOn: $sparkle.automaticallyChecksForUpdates
+                        isOn: $sparkle.automaticallyChecksForUpdates,
                     )
 
                     Toggle(
                         "Automatically download updates",
-                        isOn: $sparkle.automaticallyDownloadsUpdates
+                        isOn: $sparkle.automaticallyDownloadsUpdates,
                     )
                     .disabled(!sparkle.automaticallyChecksForUpdates)
                 }

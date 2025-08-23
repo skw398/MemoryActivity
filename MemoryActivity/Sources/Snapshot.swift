@@ -26,7 +26,7 @@ extension MemoryData {
                 wiredMemory: snapshot.wiredMemory,
                 compressed: snapshot.compressed,
                 cachedFiles: snapshot.cachedFiles,
-                swapUsed: snapshot.swapUsed
+                swapUsed: snapshot.swapUsed,
             )
         }
 
@@ -39,7 +39,7 @@ extension MemoryData {
             wiredMemory: Int64?,
             compressed: Int64?,
             cachedFiles: Int64?,
-            swapUsed: Int64?
+            swapUsed: Int64?,
         ) {
             self.pressureValue = pressureValue
             self.pressureLevel = pressureLevel
