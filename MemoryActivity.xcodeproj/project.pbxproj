@@ -130,6 +130,7 @@
 				B48FC1112DB3AEA900E212B2 /* Sources */,
 				B48FC1122DB3AEA900E212B2 /* Frameworks */,
 				B48FC1132DB3AEA900E212B2 /* Resources */,
+				1F6885D22E59817300D223D4 /* Copy Artifacts */,
 			);
 			buildRules = (
 			);
@@ -198,6 +199,22 @@
 			);
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F6885D22E59817300D223D4 /* Copy Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			name = "Copy Artifacts";
+			shellPath = /bin/sh;
+			shellScript = (
+				"set -e",
+				"mkdir -p \"$PROJECT_DIR/artifacts\"",
+				"DERIVED_DATA=\"${BUILT_PRODUCTS_DIR%/Build/*}\"",
+				"cp -R \"$DERIVED_DATA/SourcePackages/artifacts\" \"$PROJECT_DIR\"",
+				"",
+			);
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F6619A92E4F63F7002B15E7 /* Sources */ = {
@@ -410,6 +427,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MemoryActivity/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -444,6 +462,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MemoryActivity/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
