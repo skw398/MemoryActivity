@@ -7,17 +7,26 @@ struct AppMenu: View {
     var body: some View {
         Menu {
             Section {
-                Button("About MemoryActivity") {
+                Button {
                     NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
                     NSApp.activate(ignoringOtherApps: true)
 
                     NSApp.orderFrontStandardAboutPanel(nil)
+                } label: {
+                    Label("About MemoryActivity", systemImage: "info.circle")
+                        .labelStyle(.osAdaptiveMenuItem)
                 }
 
-                Button("Check for Updates…") {
+                Button {
                     NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
 
                     Sparkle.instance.checkForUpdates()
+                } label: {
+                    Label(
+                        "Check for Updates…",
+                        systemImage: "arrow.trianglehead.2.clockwise.rotate.90"
+                    )
+                    .labelStyle(.osAdaptiveMenuItem)
                 }
                 .badge(
                     Sparkle.instance.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil
@@ -26,11 +35,14 @@ struct AppMenu: View {
             }
 
             Section {
-                Button("Settings…") {
+                Button {
                     NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
                     NSApp.activate(ignoringOtherApps: true)
 
                     openSettings()
+                } label: {
+                    Label("Settings…", systemImage: "gear")
+                        .labelStyle(.osAdaptiveMenuItem)
                 }
                 .keyboardShortcut(",")
             }
@@ -59,6 +71,26 @@ struct AppMenu: View {
         }
         .menuStyle(.borderlessButton)
         .fixedSize()
+    }
+}
+
+extension LabelStyle where Self == AppMenu.OSAdaptiveMenuItemLabelStyle {
+    fileprivate static var osAdaptiveMenuItem: Self {
+        Self()
+    }
+}
+
+extension AppMenu {
+    fileprivate struct OSAdaptiveMenuItemLabelStyle: LabelStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            if macOS26Available {
+                Label(configuration)
+                    .labelStyle(.titleAndIcon)
+            } else {
+                Label(configuration)
+                    .labelStyle(.titleOnly)
+            }
+        }
     }
 }
 

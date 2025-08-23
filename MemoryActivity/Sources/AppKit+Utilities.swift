@@ -10,13 +10,13 @@ extension NSStatusBarButton {
 
 extension NSApplication {
     var menuBarExtraLabelStatusItem: NSStatusItem? {
-        // Looking for another approach.
         windows
             .filter { $0.className.contains("NSStatusBarWindow") }
             .compactMap { window -> NSStatusItem? in
                 guard
                     let statusItem = window.value(forKey: "statusItem") as? NSStatusItem,
-                    statusItem.className == "NSStatusItem"
+                    statusItem.className
+                        == (macOS26Available ? "NSSceneStatusItem" : "NSStatusItem")
                 else {
                     return nil
                 }

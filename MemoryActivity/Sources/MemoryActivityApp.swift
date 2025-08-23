@@ -17,6 +17,7 @@ struct MemoryActivityApp: App {
     var body: some Scene {
         MenuBarExtra {
             MenuBarExtraWindowView(model: store.menuBarExtraWindowViewModel)
+                .background(.windowBackground)
         } label: {
             MenuBarExtraIcon(model: store.menuBarExtraIconModel)
         }

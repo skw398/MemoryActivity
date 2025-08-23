@@ -6,15 +6,15 @@ struct MenuBarExtraWindowView: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
             MemoryDataViewContainer(memoryData: model.memoryData)
-                .padding(6)
-                .background(.background, in: .rect(cornerRadius: 4))
-                .overlay(RoundedRectangle(cornerRadius: 4).stroke(.separator))
+                .padding(macOS26Available ? 8 : 6)
+                .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
+                .overlay(RoundedRectangle(cornerRadius: macOS26Available ? 12 : 4).stroke(.separator))
 
             AppMenu()
         }
-        .frame(width: 210)
+        .frame(width: 198 + (macOS26Available ? 16 : 12))
         .padding(8)
-        .background(.windowBackground)
+        .background(.fill.quaternary)
     }
 }
 
