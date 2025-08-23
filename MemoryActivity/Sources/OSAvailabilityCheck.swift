@@ -5,3 +5,11 @@ let macOS26Available =
     } else {
         false
     }
+
+@available(macOS, deprecated: 15)
+let macOS15Available =
+    if #available(macOS 15, *) {
+        true
+    } else {
+        false
+    }

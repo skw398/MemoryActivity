@@ -3,14 +3,28 @@ import SwiftUI
 struct MenuBarExtraWindowView: View {
     let model: Model
 
+    @State private var isVisible = false
+
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
-            MemoryDataViewContainer(memoryData: model.memoryData)
-                .padding(macOS26Available ? 8 : 6)
-                .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
-                .overlay(RoundedRectangle(cornerRadius: macOS26Available ? 12 : 4).stroke(.separator))
+            // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when
+            // necessary.
+            MemoryDataView(
+                memoryData: macOS15Available
+                    ? isVisible ? model.memoryData : .empty
+                    : KeyWindowObserver.instance.value != nil ? model.memoryData : .empty
+            )
+            .padding(macOS26Available ? 8 : 6)
+            .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
+            .overlay(RoundedRectangle(cornerRadius: macOS26Available ? 12 : 4).stroke(.separator))
 
             AppMenu()
+        }
+        .onAppear {
+            isVisible = true
+        }
+        .onDisappear {
+            isVisible = false
         }
         .frame(width: 198 + (macOS26Available ? 16 : 12))
         .padding(8)
@@ -30,57 +44,6 @@ extension MenuBarExtraWindowView {
 
         func update(with snapshot: MemoryData.Snapshot) {
             memoryData.update(with: snapshot)
-        }
-    }
-}
-
-extension MenuBarExtraWindowView {
-    fileprivate struct MemoryDataViewContainer: View {
-        let memoryData: MemoryData
-
-        var body: some View {
-            // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when
-            // necessary.
-            Gate { MemoryDataView(memoryData: $0 ? memoryData : .empty) }
-        }
-    }
-}
-
-extension MenuBarExtraWindowView.MemoryDataViewContainer {
-    fileprivate struct Gate<Content: View>: View {
-        var content: (_: Bool) -> Content
-
-        var body: some View {
-            if #available(macOS 15, *) {
-                ViewLifecycleBased(content: content)
-            } else {
-                KeyWindowBased(content: content)
-            }
-        }
-
-        private struct ViewLifecycleBased: View {
-            @State private var isVisible = true
-
-            var content: (_: Bool) -> Content
-
-            var body: some View {
-                content(isVisible)
-                    .onAppear {
-                        isVisible = true
-                    }
-                    .onDisappear {
-                        isVisible = false
-                    }
-            }
-        }
-
-        @available(macOS, deprecated: 15)
-        private struct KeyWindowBased: View {
-            var content: (_: Bool) -> Content
-
-            var body: some View {
-                content(KeyWindowObserver.instance.value != nil)
-            }
         }
     }
 }

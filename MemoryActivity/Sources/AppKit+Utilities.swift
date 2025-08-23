@@ -9,20 +9,17 @@ extension NSStatusBarButton {
 }
 
 extension NSApplication {
-    var menuBarExtraLabelStatusItem: NSStatusItem? {
-        windows
-            .filter { $0.className.contains("NSStatusBarWindow") }
-            .compactMap { window -> NSStatusItem? in
-                guard
-                    let statusItem = window.value(forKey: "statusItem") as? NSStatusItem,
-                    statusItem.className
-                        == (macOS26Available ? "NSSceneStatusItem" : "NSStatusItem")
-                else {
-                    return nil
-                }
+    var menuBarExtraStatusItem: NSStatusItem? {
+        guard let window = windows.first(where: \.isNSStatusBarWindow) else {
+            return nil
+        }
 
-                return statusItem
-            }
-            .first
+        return window.value(forKey: "statusItem") as? NSStatusItem
+    }
+}
+
+extension NSWindow {
+    fileprivate var isNSStatusBarWindow: Bool {
+        className.contains("NSStatusBarWindow")
     }
 }

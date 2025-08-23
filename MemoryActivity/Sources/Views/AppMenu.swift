@@ -8,7 +8,7 @@ struct AppMenu: View {
         Menu {
             Section {
                 Button {
-                    NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
+                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
                     NSApp.activate(ignoringOtherApps: true)
 
                     NSApp.orderFrontStandardAboutPanel(nil)
@@ -18,7 +18,7 @@ struct AppMenu: View {
                 }
 
                 Button {
-                    NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
+                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
 
                     Sparkle.instance.checkForUpdates()
                 } label: {
@@ -36,7 +36,7 @@ struct AppMenu: View {
 
             Section {
                 Button {
-                    NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
+                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
                     NSApp.activate(ignoringOtherApps: true)
 
                     openSettings()
@@ -52,7 +52,7 @@ struct AppMenu: View {
                     withBundleIdentifier: "com.apple.ActivityMonitor"
                 ) {
                     Button("Open Activity Monitor") {
-                        NSApp.menuBarExtraLabelStatusItem?.button?.performClickSilently()
+                        NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
 
                         NSWorkspace.shared.openApplication(at: url, configuration: .init())
                     }

@@ -101,7 +101,9 @@ do {
     let jsonData = try JSONSerialization.data(withJSONObject: xcstrings, options: [.prettyPrinted, .sortedKeys])
     try jsonData.write(to: xcstringsUrl)
 
-    print("✅ File written to \(xcstringsUrl.path)")
+    print("File written to \(xcstringsUrl.path)")
+    print("➡️ Open the .xcstrings file in Xcode and execute “Save”(⌘S) to normalize the data.")
 } catch {
     print(error.localizedDescription)
+    exit(1)
 }
