@@ -1,3 +1,4 @@
+import AppKit
 import Combine
 import Sparkle
 
@@ -32,7 +33,13 @@ class Sparkle: NSObject {
 
     private(set) var canCheckForUpdates = false
 
-    private(set) var shouldDeliverGentleScheduledUpdateReminder = false
+    private(set) var shouldDeliverGentleScheduledUpdateReminder = false {
+        didSet {
+            NSApp.setActivationPolicy(
+                shouldDeliverGentleScheduledUpdateReminder ? .regular : .accessory,
+            )
+        }
+    }
 
     private var controller: SPUStandardUpdaterController!
 
@@ -77,12 +84,8 @@ extension Sparkle: SPUStandardUserDriverDelegate {
     nonisolated func standardUserDriverWillHandleShowingUpdate(
         _: Bool,
         forUpdate _: SUAppcastItem,
-        state: SPUUserUpdateState,
+        state _: SPUUserUpdateState,
     ) {
-        guard !state.userInitiated else {
-            return
-        }
-
         Task { @MainActor in
             shouldDeliverGentleScheduledUpdateReminder = true
         }
