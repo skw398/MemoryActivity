@@ -1,20 +1,27 @@
 import AppKit
 
 extension NSStatusBarButton {
-    func performClickSilently() {
+    @discardableResult
+    func performClickSilently() -> Bool {
         if let action {
-            NSApp.sendAction(action, to: target, from: self)
+            return NSApp.sendAction(action, to: target, from: self)
         }
+
+        return false
     }
 }
 
 extension NSApplication {
     var menuBarExtraStatusItem: NSStatusItem? {
-        guard let window = windows.first(where: \.isNSStatusBarWindow) else {
+        guard let menuBarExtraStatusBarWindow else {
             return nil
         }
 
-        return window.value(forKey: "statusItem") as? NSStatusItem
+        return menuBarExtraStatusBarWindow.value(forKey: "statusItem") as? NSStatusItem
+    }
+
+    var menuBarExtraStatusBarWindow: NSWindow? {
+        windows.first(where: \.isNSStatusBarWindow)
     }
 }
 

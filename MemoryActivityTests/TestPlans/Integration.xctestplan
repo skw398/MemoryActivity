@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "1415A6C4-C2B9-4219-92B4-3871F57D3707",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "testFunctions" : [
+          "integration()"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:MemoryActivity.xcodeproj",
+        "identifier" : "1F6619AC2E4F63F7002B15E7",
+        "name" : "MemoryActivityTests"
+      }
+    }
+  ],
+  "version" : 1
+}

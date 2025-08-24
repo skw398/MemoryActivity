@@ -3,7 +3,11 @@ import SwiftUI
 struct MenuBarExtraWindowView: View {
     let model: Model
 
-    @State private var isVisible = false
+    @State private var isVisible = false {
+        didSet {
+            MenuBarExtraWindowViewVisibilityCheck.value = isVisible
+        }
+    }
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {

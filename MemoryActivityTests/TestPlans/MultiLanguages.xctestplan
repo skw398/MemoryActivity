@@ -25,6 +25,16 @@
   "testTargets" : [
     {
       "parallelizable" : true,
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "ByteCountFormatTests",
+            "testFunctions" : [
+              "format()"
+            ]
+          }
+        ]
+      },
       "target" : {
         "containerPath" : "container:MemoryActivity.xcodeproj",
         "identifier" : "1F6619AC2E4F63F7002B15E7",

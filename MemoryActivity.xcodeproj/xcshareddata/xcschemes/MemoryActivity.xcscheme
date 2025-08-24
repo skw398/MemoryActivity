@@ -29,7 +29,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:MemoryActivityTests/MemoryActivity.xctestplan"
+            reference = "container:MemoryActivityTests/TestPlans/Integration.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:MemoryActivityTests/TestPlans/MultiLanguages.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:MemoryActivityTests/TestPlans/MemoryActivity.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

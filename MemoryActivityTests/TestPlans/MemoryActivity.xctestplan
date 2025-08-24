@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "DF0B628C-88CD-4977-A6CD-D8A39B30BDCF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "ByteCountFormatTests"
+          },
+          {
+            "name" : "Integration"
+          }
+        ],
+        "testFunctions" : [
+          "integration()"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:MemoryActivity.xcodeproj",
+        "identifier" : "1F6619AC2E4F63F7002B15E7",
+        "name" : "MemoryActivityTests"
+      }
+    }
+  ],
+  "version" : 2
+}
