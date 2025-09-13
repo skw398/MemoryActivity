@@ -2,7 +2,6 @@ import Foundation
 
 struct MemoryActivityByteCountFormatStyle: FormatStyle {
     typealias FormatInput = Int64
-
     typealias FormatOutput = String
 
     func format(_ value: Int64) -> String {

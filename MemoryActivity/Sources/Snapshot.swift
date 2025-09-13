@@ -1,7 +1,5 @@
 import mabackend
 
-private let backend = mabackend.instance
-
 extension MemoryData {
     struct Snapshot {
         var pressureValue: Int?
@@ -15,7 +13,7 @@ extension MemoryData {
         var swapUsed: Int64?
 
         static func get() -> Self {
-            let snapshot = backend.get()
+            let snapshot = mabackend.instance.get()
 
             return .init(
                 pressureValue: snapshot.pressureValue,

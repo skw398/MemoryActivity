@@ -1,25 +1,26 @@
 import SwiftUI
+import mabackend
 
 @main
 struct MemoryActivityApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self)
     var appDelegate
 
-    let store: ModelStore
+    let hub: MemoryDataHub
 
     init() {
         _ = OpenAtLogin.instance
         _ = Sparkle.instance
-
-        store = .instance(.live)
+        _ = mabackend.instance
+        hub = .instance(.live)
     }
 
     var body: some Scene {
         MenuBarExtra {
-            MenuBarExtraWindowView(model: store.menuBarExtraWindowViewModel)
+            MenuBarExtraWindowView(model: hub.menuBarExtraWindowViewModel)
                 .background(.windowBackground)
         } label: {
-            MenuBarExtraIcon(model: store.menuBarExtraIconModel)
+            MenuBarExtraIcon(model: hub.menuBarExtraIconModel)
         }
         .menuBarExtraStyle(.window)
 

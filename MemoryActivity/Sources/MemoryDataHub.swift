@@ -1,20 +1,20 @@
 @MainActor
-class ModelStore {
+class MemoryDataHub {
     let menuBarExtraWindowViewModel: MenuBarExtraWindowView.Model
     let menuBarExtraIconModel: MenuBarExtraIcon.Model
 
-    static func instance(_ mode: Mode) -> ModelStore {
+    static func instance(_ mode: Mode) -> MemoryDataHub {
         if let instance = instances[mode] {
             return instance
         }
 
-        let store = ModelStore(mode: mode)
+        let store = MemoryDataHub(mode: mode)
         instances[mode] = store
 
         return store
     }
 
-    private static var instances = [Mode: ModelStore]()
+    private static var instances = [Mode: MemoryDataHub]()
 
     private init(mode: Mode) {
         switch mode {
@@ -49,7 +49,7 @@ class ModelStore {
     }
 }
 
-extension ModelStore {
+extension MemoryDataHub {
     enum Mode {
         case live
         case sample

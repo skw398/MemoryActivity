@@ -27,24 +27,24 @@ func integration() async throws {
 
     try await Task.sleep(for: .milliseconds(1_000))
 
-    let modelStore = ModelStore.instance(.live)
+    let hub = MemoryDataHub.instance(.live)
 
-    #expect(modelStore.menuBarExtraIconModel.memoryPressureLebel != nil)
+    #expect(hub.menuBarExtraIconModel.memoryPressureLebel != nil)
 
     let memoryPressureDataCount =
-        modelStore.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
+        hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
     #expect(memoryPressureDataCount > 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.physicalMemory ?? -1 > 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.memoryUsed ?? -1 > 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.appMemory ?? -1 > 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.wiredMemory ?? -1 >= 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.compressed ?? -1 >= 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.cachedFiles ?? -1 >= 0)
-    #expect(modelStore.menuBarExtraWindowViewModel.memoryData.swapUsed ?? -1 >= 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.physicalMemory ?? -1 > 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.memoryUsed ?? -1 > 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.appMemory ?? -1 > 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.wiredMemory ?? -1 >= 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.compressed ?? -1 >= 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.cachedFiles ?? -1 >= 0)
+    #expect(hub.menuBarExtraWindowViewModel.memoryData.swapUsed ?? -1 >= 0)
 
     try await Task.sleep(for: .milliseconds(1_000))
     #expect(
-        modelStore.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
+        hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
             > memoryPressureDataCount,
     )
 }
