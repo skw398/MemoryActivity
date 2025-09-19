@@ -1,3 +1,3 @@
 ProductName:		macOS
-ProductVersion:		15.6
-BuildVersion:		24G84
+ProductVersion:		26.0
+BuildVersion:		25A354
