@@ -2,7 +2,7 @@
 
 Memory pressure and stats from Activity Monitor — right in your menu bar!
 
-<img width="480" src="project/screenshot.png">
+<img src="project/screenshot.png">
 
 ## Installation
 
