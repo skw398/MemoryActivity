@@ -14,5 +14,5 @@ Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/
 
 ## Build
 
-1. Open `MemoryActivity.xcodeproj` in Xcode 26.1
+1. Open `MemoryActivity.xcodeproj` in Xcode 26.2
 1. Run
