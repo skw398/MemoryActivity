@@ -6,8 +6,7 @@ import Testing
 @Test(.enabled(if: macOS15Available))
 @MainActor
 func integration() async throws {
-    #expect(NSApp.menuBarExtraStatusItem?.button != nil)
-    let button = NSApp.menuBarExtraStatusItem!.button!
+    let button = try #require(NSApp.menuBarExtraStatusItem?.button)
 
     let performClickSilentlySucceeded = button.performClickSilently()
     #expect(performClickSilentlySucceeded)
