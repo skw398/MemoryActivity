@@ -18,6 +18,8 @@ struct AppSettings: View {
                 VStack(alignment: .leading) {
                     Toggle("Open at login", isOn: $openAtLogin.isOn)
                         .task {
+                            openAtLogin.refresh()
+
                             for await _ in NotificationCenter.default.voids(
                                 named: NSWindow.didBecomeKeyNotification,
                             ) {
