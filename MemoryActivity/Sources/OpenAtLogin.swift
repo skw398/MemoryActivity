@@ -5,14 +5,25 @@ import ServiceManagement
 class OpenAtLogin {
     static let instance = OpenAtLogin()
 
+    @ObservationIgnored private var _isOn: Bool
+
     var isOn: Bool {
-        didSet {
-            guard isOn != oldValue else {
+        get {
+            access(keyPath: \.isOn)
+            return _isOn
+        }
+        set {
+            let oldValue = _isOn
+            guard newValue != oldValue else {
                 return
             }
 
+            withMutation(keyPath: \.isOn) {
+                _isOn = newValue
+            }
+
             do {
-                if isOn {
+                if newValue {
                     try service.register()
                 } else {
                     try service.unregister()
@@ -28,7 +39,7 @@ class OpenAtLogin {
     private let service = SMAppService.mainApp
 
     private init() {
-        isOn = service.status == .enabled
+        _isOn = service.status == .enabled
     }
 
     deinit {
@@ -36,6 +47,8 @@ class OpenAtLogin {
     }
 
     func refresh() {
-        isOn = service.status == .enabled
+        withMutation(keyPath: \.isOn) {
+            _isOn = service.status == .enabled
+        }
     }
 }
