@@ -7,7 +7,7 @@ struct MenuBarExtraIcon: View {
     var showMemoryPressureIndicator = true
 
     var body: some View {
-        if showMemoryPressureIndicator, let level = model.memoryPressureLebel {
+        if showMemoryPressureIndicator, let level = model.memoryPressureLevel {
             level.memorychipBadge
         } else {
             Image.memorychip
@@ -19,17 +19,17 @@ extension MenuBarExtraIcon {
     @MainActor
     @Observable
     class Model {
-        typealias MemoryPressureLevel = MemoryData.MemoryPressure.Data.Level
+        typealias MemoryPressureLevel = MemoryData.PressureLevel
 
-        private(set) var memoryPressureLebel: MemoryPressureLevel?
+        private(set) var memoryPressureLevel: MemoryPressureLevel?
 
-        init(memoryPressureLebel: MemoryPressureLevel? = nil) {
-            self.memoryPressureLebel = memoryPressureLebel
+        init(memoryPressureLevel: MemoryPressureLevel? = nil) {
+            self.memoryPressureLevel = memoryPressureLevel
         }
 
         func update(with snapshot: MemoryData.Snapshot) {
             guard let pressureLevel = snapshot.pressureLevel else {
-                memoryPressureLebel = nil
+                memoryPressureLevel = nil
                 return
             }
 
@@ -37,14 +37,14 @@ extension MenuBarExtraIcon {
 
             // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when
             // necessary.
-            if level != memoryPressureLebel {
-                memoryPressureLebel = level
+            if level != memoryPressureLevel {
+                memoryPressureLevel = level
             }
         }
     }
 }
 
-extension MemoryData.MemoryPressure.Data.Level {
+extension MemoryData.PressureLevel {
     fileprivate var memorychipBadge: Image {
         Self.memorychipBadges[self]!
     }
@@ -78,7 +78,7 @@ extension Image {
     HStack {
         MenuBarExtraIcon(model: .init())
         ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
-            MenuBarExtraIcon(model: .init(memoryPressureLebel: level))
+            MenuBarExtraIcon(model: .init(memoryPressureLevel: level))
         }
     }
     .padding()

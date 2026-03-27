@@ -23,7 +23,7 @@
           }
         ],
         "testFunctions" : [
-          "integration()"
+          "`menu bar extra toggles and memory data is populated`()"
         ]
       },
       "target" : {

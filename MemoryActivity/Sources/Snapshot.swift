@@ -12,7 +12,7 @@ extension MemoryData {
         var cachedFiles: Int64?
         var swapUsed: Int64?
 
-        static func get() -> Self {
+        static func current() -> Self {
             let snapshot = mabackend.instance.get()
 
             return .init(

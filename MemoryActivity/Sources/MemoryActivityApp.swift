@@ -12,7 +12,7 @@ struct MemoryActivityApp: App {
         _ = OpenAtLogin.instance
         _ = Sparkle.instance
         _ = mabackend.instance
-        hub = .instance(.live)
+        hub = .live
     }
 
     var body: some Scene {

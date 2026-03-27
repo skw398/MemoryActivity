@@ -7,17 +7,17 @@ import Testing
 @MainActor
 struct AppKitUtilitiesTests {
     @Test
-    func menuBarExtraStatusBarWindow() {
+    func `menuBarExtraStatusBarWindow is not nil`() {
         #expect(NSApp.menuBarExtraStatusBarWindow != nil)
     }
 
     @Test
-    func menuBarExtraStatusItem() {
+    func `menuBarExtraStatusItem is not nil`() {
         #expect(NSApp.menuBarExtraStatusItem != nil)
     }
 
     @Test
-    func menuBarExtraStatusItemButtonPerformClickSilently() {
+    func `menuBarExtraStatusItem button performClickSilently returns true`() {
         #expect(NSApp.menuBarExtraStatusItem?.button?.performClickSilently() ?? false)
     }
 }

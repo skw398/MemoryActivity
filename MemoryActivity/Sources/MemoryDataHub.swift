@@ -3,55 +3,48 @@ class MemoryDataHub {
     let menuBarExtraWindowViewModel: MenuBarExtraWindowView.Model
     let menuBarExtraIconModel: MenuBarExtraIcon.Model
 
-    static func instance(_ mode: Mode) -> MemoryDataHub {
-        if let instance = instances[mode] {
-            return instance
-        }
+    static let live = MemoryDataHub(
+        menuBarExtraWindowViewModel: MenuBarExtraWindowView.Model(
+            memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67)),
+        ),
+        menuBarExtraIconModel: MenuBarExtraIcon.Model(),
+        startPolling: true,
+    )
 
-        let store = MemoryDataHub(mode: mode)
-        instances[mode] = store
+    static let sample: MemoryDataHub = {
+        let sample = MemoryData.sample
+        return MemoryDataHub(
+            menuBarExtraWindowViewModel: MenuBarExtraWindowView.Model(memoryData: sample),
+            menuBarExtraIconModel: MenuBarExtraIcon.Model(
+                memoryPressureLevel: sample.memoryPressure.data.last?.level,
+            ),
+            startPolling: false,
+        )
+    }()
 
-        return store
-    }
+    private init(
+        menuBarExtraWindowViewModel: MenuBarExtraWindowView.Model,
+        menuBarExtraIconModel: MenuBarExtraIcon.Model,
+        startPolling: Bool,
+    ) {
+        self.menuBarExtraWindowViewModel = menuBarExtraWindowViewModel
+        self.menuBarExtraIconModel = menuBarExtraIconModel
 
-    private static var instances = [Mode: MemoryDataHub]()
-
-    private init(mode: Mode) {
-        switch mode {
-        case .live:
-            menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(
-                memoryData: MemoryData(memoryPressure: MemoryData.MemoryPressure(capacity: 67)),
-            )
-            menuBarExtraIconModel = MenuBarExtraIcon.Model()
-
+        if startPolling {
             Task {
                 let clock = SuspendingClock()
 
                 for await _ in clock.stream(every: .seconds(1)) {
-                    let snapshot = MemoryData.Snapshot.get()
+                    let snapshot = MemoryData.Snapshot.current()
 
                     menuBarExtraWindowViewModel.update(with: snapshot)
                     menuBarExtraIconModel.update(with: snapshot)
                 }
             }
-        case .sample:
-            let sample = MemoryData.sample
-
-            menuBarExtraWindowViewModel = MenuBarExtraWindowView.Model(memoryData: sample)
-            menuBarExtraIconModel = MenuBarExtraIcon.Model(
-                memoryPressureLebel: sample.memoryPressure.data.last?.level,
-            )
         }
     }
 
     deinit {
         fatalError()
-    }
-}
-
-extension MemoryDataHub {
-    enum Mode {
-        case live
-        case sample
     }
 }

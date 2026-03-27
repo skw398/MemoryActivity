@@ -5,30 +5,24 @@ import Testing
 
 @Test(.enabled(if: macOS15Available))
 @MainActor
-func integration() async throws {
+func `menu bar extra toggles and memory data is populated`() async throws {
     let button = try #require(NSApp.menuBarExtraStatusItem?.button)
 
     let performClickSilentlySucceeded = button.performClickSilently()
     #expect(performClickSilentlySucceeded)
-    try await Task.sleep(for: .milliseconds(100))
-
-    #expect(MenuBarExtraWindowViewVisibilityCheck.value)
+    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value }
 
     button.performClickSilently()
-    try await Task.sleep(for: .milliseconds(100))
-
-    #expect(MenuBarExtraWindowViewVisibilityCheck.value == false)
+    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value == false }
 
     button.performClickSilently()
-    try await Task.sleep(for: .milliseconds(100))
-
-    #expect(MenuBarExtraWindowViewVisibilityCheck.value)
+    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value }
 
     try await Task.sleep(for: .milliseconds(1_000))
 
-    let hub = MemoryDataHub.instance(.live)
+    let hub = MemoryDataHub.live
 
-    #expect(hub.menuBarExtraIconModel.memoryPressureLebel != nil)
+    #expect(hub.menuBarExtraIconModel.memoryPressureLevel != nil)
 
     let memoryPressureDataCount =
         hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
@@ -46,4 +40,22 @@ func integration() async throws {
         hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
             > memoryPressureDataCount,
     )
+}
+
+@MainActor
+private func waitUntil(
+    timeout: Duration = .seconds(2),
+    condition: @MainActor () -> Bool,
+) async throws {
+    let clock = ContinuousClock()
+    let deadline = clock.now + timeout
+
+    while clock.now < deadline {
+        if condition() {
+            return
+        }
+        try await Task.sleep(for: .milliseconds(10))
+    }
+
+    #expect(Bool(false), "Condition not met within \(timeout).")
 }

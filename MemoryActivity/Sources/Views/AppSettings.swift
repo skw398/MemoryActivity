@@ -20,7 +20,7 @@ struct AppSettings: View {
                         .task {
                             openAtLogin.refresh()
 
-                            for await _ in NotificationCenter.default.voids(
+                            for await _ in NotificationCenter.default.signals(
                                 named: NSWindow.didBecomeKeyNotification,
                             ) {
                                 openAtLogin.refresh()

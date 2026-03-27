@@ -5,7 +5,7 @@ import Testing
 
 struct ByteCountFormatTests {
     @Test(.enabled(if: [.english, .japanese].contains(Locale.current.language.languageCode)))
-    func format() {
+    func `formatted byte counts match expected strings`() {
         let style = MemoryActivityByteCountFormatStyle()
 
         #expect(Int64(123.45 * 1_024 * 1_024 * 1_024).formatted(style) == "123.45 GB")
@@ -20,19 +20,23 @@ struct ByteCountFormatTests {
         #expect(Int64(123.45 * 1_024).formatted(style) == "123 KB")
         #expect(Int64(123 * 1_024).formatted(style) == "123 KB")
         #expect(Int64(1_024).formatted(style) == "1 KB")
+    }
 
-        if Locale.current.language.languageCode == .english {
-            #expect(Int64(1_023).formatted(style) == "1,023 bytes")
-            #expect(Int64(123.45).formatted(style) == "123 bytes")
-            #expect(Int64(123).formatted(style) == "123 bytes")
-            #expect(Int64(0).formatted(style) == "0 bytes")
-        }
+    @Test(.enabled(if: Locale.current.language.languageCode == .english))
+    func `formatted byte counts in English`() {
+        let style = MemoryActivityByteCountFormatStyle()
 
-        if Locale.current.language.languageCode == .japanese {
-            #expect(Int64(1_023).formatted(style) == "1,023 バイト")
-            #expect(Int64(123.45).formatted(style) == "123 バイト")
-            #expect(Int64(123).formatted(style) == "123 バイト")
-            #expect(Int64(0).formatted(style) == "0 バイト")
-        }
+        #expect(Int64(1_023).formatted(style) == "1,023 bytes")
+        #expect(Int64(123).formatted(style) == "123 bytes")
+        #expect(Int64(0).formatted(style) == "0 bytes")
+    }
+
+    @Test(.enabled(if: Locale.current.language.languageCode == .japanese))
+    func `formatted byte counts in Japanese`() {
+        let style = MemoryActivityByteCountFormatStyle()
+
+        #expect(Int64(1_023).formatted(style) == "1,023 バイト")
+        #expect(Int64(123).formatted(style) == "123 バイト")
+        #expect(Int64(0).formatted(style) == "0 バイト")
     }
 }

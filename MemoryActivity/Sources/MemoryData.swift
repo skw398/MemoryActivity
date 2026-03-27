@@ -11,14 +11,19 @@ struct MemoryData {
 
 extension MemoryData {
     struct MemoryPressure {
-        var data: [Data] = []
+        var data: [DataPoint] = []
         var capacity: Int
 
         init(capacity: Int) {
             self.capacity = capacity
         }
 
-        mutating func append(_ data: Data) {
+        init(data: [DataPoint], capacity: Int) {
+            self.data = data
+            self.capacity = capacity
+        }
+
+        mutating func append(_ data: DataPoint) {
             self.data.append(data)
             if self.data.count > capacity {
                 self.data.removeFirst()
@@ -27,8 +32,12 @@ extension MemoryData {
     }
 }
 
+extension MemoryData {
+    typealias PressureLevel = MemoryPressure.DataPoint.Level
+}
+
 extension MemoryData.MemoryPressure {
-    struct Data {
+    struct DataPoint {
         var value: Int
         var level: Level
 

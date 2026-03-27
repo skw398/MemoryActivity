@@ -30,7 +30,7 @@
           {
             "name" : "ByteCountFormatTests",
             "testFunctions" : [
-              "format()"
+              "`formatted byte counts match expected strings`()"
             ]
           }
         ]

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MemoryPressureGraph: View {
-    typealias Data = MemoryData.MemoryPressure.Data
+    typealias DataPoint = MemoryData.MemoryPressure.DataPoint
 
     let memoryPressure: MemoryData.MemoryPressure
 
@@ -13,7 +13,7 @@ struct MemoryPressureGraph: View {
             let unitWidth = size.width / CGFloat(maxDataCount - 1)
             let lineWidth = unitWidth / 4
 
-            var anchor: (point: CGPoint, data: Data)?
+            var anchor: (point: CGPoint, data: DataPoint)?
             for (i, target) in data.reversed().enumerated() {
                 let point = CGPoint(
                     x: size.width - CGFloat(i) * unitWidth,
@@ -90,11 +90,4 @@ struct MemoryPressureGraph: View {
         .border(.separator)
     }
     .padding()
-}
-
-extension MemoryData.MemoryPressure {
-    fileprivate init(data: [Data], capacity: Int) {
-        self.data = data
-        self.capacity = capacity
-    }
 }

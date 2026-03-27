@@ -56,11 +56,11 @@ extension MemoryData {
     @MainActor
     fileprivate mutating func update(with snapshot: Snapshot) {
         if let value = snapshot.pressureValue, let level = snapshot.pressureLevel {
-            guard let level = MemoryPressure.Data.Level(rawValue: level) else {
+            guard let level = MemoryPressure.DataPoint.Level(rawValue: level) else {
                 fatalError()
             }
 
-            memoryPressure.append(MemoryPressure.Data(value: value, level: level))
+            memoryPressure.append(MemoryPressure.DataPoint(value: value, level: level))
         }
         physicalMemory = snapshot.physicalMemory
         memoryUsed = snapshot.memoryUsed

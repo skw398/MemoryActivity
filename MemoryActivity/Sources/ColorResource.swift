@@ -1,6 +1,6 @@
 import DeveloperToolsSupport
 
-extension MemoryData.MemoryPressure.Data.Level {
+extension MemoryData.PressureLevel {
     var colorResource: ColorResource {
         switch self {
         case .normal:
