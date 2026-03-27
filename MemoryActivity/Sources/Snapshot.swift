@@ -51,3 +51,22 @@ extension MemoryData {
         }
     }
 }
+
+extension MemoryData {
+    mutating func update(with snapshot: Snapshot) {
+        if let value = snapshot.pressureValue, let level = snapshot.pressureLevel {
+            guard let level = MemoryPressure.DataPoint.Level(rawValue: level) else {
+                fatalError()
+            }
+
+            memoryPressure.append(MemoryPressure.DataPoint(value: value, level: level))
+        }
+        physicalMemory = snapshot.physicalMemory
+        memoryUsed = snapshot.memoryUsed
+        appMemory = snapshot.appMemory
+        wiredMemory = snapshot.wiredMemory
+        compressed = snapshot.compressed
+        cachedFiles = snapshot.cachedFiles
+        swapUsed = snapshot.swapUsed
+    }
+}

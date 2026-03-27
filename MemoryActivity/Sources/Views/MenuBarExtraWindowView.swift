@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuBarExtraWindowView: View {
-    let model: Model
+    let store: MemoryDataStore
 
     @State private var isVisible = false {
         didSet {
@@ -10,17 +10,18 @@ struct MenuBarExtraWindowView: View {
     }
 
     var body: some View {
+        let shouldShowMemoryData =
+            macOS15Available ? isVisible : KeyWindowObserver.instance.value != nil
+
         VStack(alignment: .trailing, spacing: 8) {
             // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when
             // necessary.
-            MemoryDataView(
-                memoryData: macOS15Available
-                    ? isVisible ? model.memoryData : .empty
-                    : KeyWindowObserver.instance.value != nil ? model.memoryData : .empty,
-            )
-            .padding(macOS26Available ? 8 : 6)
-            .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
-            .overlay(RoundedRectangle(cornerRadius: macOS26Available ? 12 : 4).stroke(.separator))
+            MemoryDataView(memoryData: shouldShowMemoryData ? store.memoryData : .empty)
+                .padding(macOS26Available ? 8 : 6)
+                .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
+                .overlay(
+                    RoundedRectangle(cornerRadius: macOS26Available ? 12 : 4).stroke(.separator),
+                )
 
             AppMenu()
         }
@@ -36,44 +37,10 @@ struct MenuBarExtraWindowView: View {
     }
 }
 
-extension MenuBarExtraWindowView {
-    @MainActor
-    @Observable
-    class Model {
-        private(set) var memoryData: MemoryData
-
-        init(memoryData: MemoryData) {
-            self.memoryData = memoryData
-        }
-
-        func update(with snapshot: MemoryData.Snapshot) {
-            memoryData.update(with: snapshot)
-        }
-    }
-}
-
 extension MemoryData {
-    @MainActor
-    fileprivate mutating func update(with snapshot: Snapshot) {
-        if let value = snapshot.pressureValue, let level = snapshot.pressureLevel {
-            guard let level = MemoryPressure.DataPoint.Level(rawValue: level) else {
-                fatalError()
-            }
-
-            memoryPressure.append(MemoryPressure.DataPoint(value: value, level: level))
-        }
-        physicalMemory = snapshot.physicalMemory
-        memoryUsed = snapshot.memoryUsed
-        appMemory = snapshot.appMemory
-        wiredMemory = snapshot.wiredMemory
-        compressed = snapshot.compressed
-        cachedFiles = snapshot.cachedFiles
-        swapUsed = snapshot.swapUsed
-    }
-
-    fileprivate static let empty = Self(memoryPressure: .init(capacity: 0))
+    static let empty = Self(memoryPressure: .init(capacity: 0))
 }
 
 #Preview {
-    MenuBarExtraWindowView(model: .init(memoryData: .sample))
+    MenuBarExtraWindowView(store: .sample)
 }

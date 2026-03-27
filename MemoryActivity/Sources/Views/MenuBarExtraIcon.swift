@@ -1,45 +1,16 @@
 import SwiftUI
 
 struct MenuBarExtraIcon: View {
-    let model: Model
+    let store: MemoryDataStore
 
     @AppStorage("showMemoryPressureIndicator")
     var showMemoryPressureIndicator = true
 
     var body: some View {
-        if showMemoryPressureIndicator, let level = model.memoryPressureLevel {
+        if showMemoryPressureIndicator, let level = store.memoryPressureLevel {
             level.memorychipBadge
         } else {
             Image.memorychip
-        }
-    }
-}
-
-extension MenuBarExtraIcon {
-    @MainActor
-    @Observable
-    class Model {
-        typealias MemoryPressureLevel = MemoryData.PressureLevel
-
-        private(set) var memoryPressureLevel: MemoryPressureLevel?
-
-        init(memoryPressureLevel: MemoryPressureLevel? = nil) {
-            self.memoryPressureLevel = memoryPressureLevel
-        }
-
-        func update(with snapshot: MemoryData.Snapshot) {
-            guard let pressureLevel = snapshot.pressureLevel else {
-                memoryPressureLevel = nil
-                return
-            }
-
-            let level = MemoryPressureLevel(rawValue: pressureLevel)!
-
-            // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when
-            // necessary.
-            if level != memoryPressureLevel {
-                memoryPressureLevel = level
-            }
         }
     }
 }
@@ -76,10 +47,7 @@ extension Image {
 
 #Preview {
     HStack {
-        MenuBarExtraIcon(model: .init())
-        ForEach(MenuBarExtraIcon.Model.MemoryPressureLevel.allCases, id: \.rawValue) { level in
-            MenuBarExtraIcon(model: .init(memoryPressureLevel: level))
-        }
+        MenuBarExtraIcon(store: .sample)
     }
     .padding()
     .defaultAppStorage(.preview(applying: ["showMemoryPressureIndicator": true]))

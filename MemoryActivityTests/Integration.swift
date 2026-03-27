@@ -10,40 +10,43 @@ func `menu bar extra toggles and memory data is populated`() async throws {
 
     let performClickSilentlySucceeded = button.performClickSilently()
     #expect(performClickSilentlySucceeded)
-    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value }
+    try await waitUntil("menu bar extra opens") {
+        MenuBarExtraWindowViewVisibilityCheck.value
+    }
 
     button.performClickSilently()
-    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value == false }
+    try await waitUntil("menu bar extra closes") {
+        MenuBarExtraWindowViewVisibilityCheck.value == false
+    }
 
     button.performClickSilently()
-    try await waitUntil { MenuBarExtraWindowViewVisibilityCheck.value }
+    try await waitUntil("menu bar extra reopens") {
+        MenuBarExtraWindowViewVisibilityCheck.value
+    }
 
     try await Task.sleep(for: .milliseconds(1_000))
 
-    let hub = MemoryDataHub.live
+    let store = MemoryDataStore.live
 
-    #expect(hub.menuBarExtraIconModel.memoryPressureLevel != nil)
+    #expect(store.memoryPressureLevel != nil)
 
-    let memoryPressureDataCount =
-        hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
+    let memoryPressureDataCount = store.memoryData.memoryPressure.data.count
     #expect(memoryPressureDataCount > 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.physicalMemory ?? -1 > 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.memoryUsed ?? -1 > 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.appMemory ?? -1 > 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.wiredMemory ?? -1 >= 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.compressed ?? -1 >= 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.cachedFiles ?? -1 >= 0)
-    #expect(hub.menuBarExtraWindowViewModel.memoryData.swapUsed ?? -1 >= 0)
+    #expect(store.memoryData.physicalMemory ?? -1 > 0)
+    #expect(store.memoryData.memoryUsed ?? -1 > 0)
+    #expect(store.memoryData.appMemory ?? -1 > 0)
+    #expect(store.memoryData.wiredMemory ?? -1 >= 0)
+    #expect(store.memoryData.compressed ?? -1 >= 0)
+    #expect(store.memoryData.cachedFiles ?? -1 >= 0)
+    #expect(store.memoryData.swapUsed ?? -1 >= 0)
 
     try await Task.sleep(for: .milliseconds(1_000))
-    #expect(
-        hub.menuBarExtraWindowViewModel.memoryData.memoryPressure.data.count
-            > memoryPressureDataCount,
-    )
+    #expect(store.memoryData.memoryPressure.data.count > memoryPressureDataCount)
 }
 
 @MainActor
 private func waitUntil(
+    _ description: String = "condition",
     timeout: Duration = .seconds(2),
     condition: @MainActor () -> Bool,
 ) async throws {
@@ -57,5 +60,5 @@ private func waitUntil(
         try await Task.sleep(for: .milliseconds(10))
     }
 
-    #expect(Bool(false), "Condition not met within \(timeout).")
+    #expect(Bool(false), "'\(description)' was not met within \(timeout).")
 }

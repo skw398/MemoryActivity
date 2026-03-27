@@ -6,21 +6,21 @@ struct MemoryActivityApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self)
     var appDelegate
 
-    let hub: MemoryDataHub
+    let store: MemoryDataStore
 
     init() {
         _ = OpenAtLogin.instance
         _ = Sparkle.instance
         _ = mabackend.instance
-        hub = .live
+        store = .live
     }
 
     var body: some Scene {
         MenuBarExtra {
-            MenuBarExtraWindowView(model: hub.menuBarExtraWindowViewModel)
+            MenuBarExtraWindowView(store: store)
                 .background(.windowBackground)
         } label: {
-            MenuBarExtraIcon(model: hub.menuBarExtraIconModel)
+            MenuBarExtraIcon(store: store)
         }
         .menuBarExtraStyle(.window)
 
