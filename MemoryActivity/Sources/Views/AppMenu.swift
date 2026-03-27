@@ -60,8 +60,11 @@ struct AppMenu: View {
             }
 
             Section {
-                Button("Quit MemoryActivity") {
+                Button {
                     NSApp.terminate(nil)
+                } label: {
+                    Label("Quit MemoryActivity", systemImage: "xmark.rectangle")
+                        .labelStyle(.osAdaptiveMenuItem)
                 }
                 .keyboardShortcut("q")
             }
