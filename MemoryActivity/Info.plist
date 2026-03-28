@@ -8,6 +8,10 @@
 	<true/>
 	<key>SUEnableDownloaderService</key>
 	<true/>
+	<key>SURequireSignedFeed</key>
+	<true/>
+	<key>SUVerifyUpdateBeforeExtraction</key>
+	<true/>
 	<key>SUPublicEDKey</key>
 	<string>aexNY6/1M3jtZkkd5mbqhAvj/K3VHFl+QZM+xpPj8BE=</string>
 </dict>
