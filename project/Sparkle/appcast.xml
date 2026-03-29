@@ -1,7 +1,23 @@
-<?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>MemoryActivity</title>
+        <item>
+            <title>1.0.4</title>
+            <pubDate>Sun, 29 Mar 2026 09:39:18 +0900</pubDate>
+            <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[- Add icon to quit menu item
+- Apply system localizations for macOS 26.3
+- Update build environment to Xcode 26.4
+- Update Sparkle package to 2.9.0
+- Internal improvements
+]]></description>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.4/MemoryActivity.dmg" length="2748444" type="application/octet-stream" sparkle:edSignature="Kms8eYKtSZHr2snTLBPVzhJH/6vHO7+dqzBwNEs0YX7VC1/UOhYI3mDFtNUVsmWMbdfSNF/03pyaYny4lfmTAg=="></enclosure>
+        </item>
         <item>
             <title>1.0.3</title>
             <pubDate>Sat, 20 Sep 2025 10:52:09 +0900</pubDate>
@@ -19,7 +35,7 @@
             <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
-            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.3/MemoryActivity.dmg" length="2854724" type="application/octet-stream" sparkle:edSignature="fPl/x8D8lJagUko6WD1YHszlRonMGmWJ5J1u8R8mWK+AIrVcSCEgCrnPXlApjWtCPAumIWYhRGbMyknxAC2kBw=="/>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.3/MemoryActivity.dmg" length="2854724" type="application/octet-stream" sparkle:edSignature="fPl/x8D8lJagUko6WD1YHszlRonMGmWJ5J1u8R8mWK+AIrVcSCEgCrnPXlApjWtCPAumIWYhRGbMyknxAC2kBw=="></enclosure>
         </item>
         <item>
             <title>1.0.2</title>
@@ -35,21 +51,10 @@
             <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
-            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.2/MemoryActivity.dmg" length="3175522" type="application/octet-stream" sparkle:edSignature="dIjTNpdNkUBr0pPfDxHuQDe3e3/ZvjaFTPCy8ykLMFafxAEO5Zz4tThXIAxgFWjPvDHDfzlAs+/PMtQBjZEOAg=="/>
-        </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Sat, 17 May 2025 09:58:04 +0900</pubDate>
-            <sparkle:version>2</sparkle:version>
-            <description><![CDATA[
-                <ul>
-                    <li>Apply new macOS system localizations</li>
-                </ul>
-            ]]></description>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:fullReleaseNotesLink>https://github.com/skw398/MemoryActivity/releases</sparkle:fullReleaseNotesLink>
-            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.1/MemoryActivity.dmg" length="3183744" type="application/octet-stream" sparkle:edSignature="DuHUmzmkkG9v+aRf98AqkZH5sXhYebRIlKIu0Nr/Z7v4b9tTS7tz3DxLN+j6XfUDSF8sEV2AeSRenFzouYWDCg=="/>
+            <enclosure url="https://github.com/skw398/MemoryActivity/releases/download/1.0.2/MemoryActivity.dmg" length="3175522" type="application/octet-stream" sparkle:edSignature="dIjTNpdNkUBr0pPfDxHuQDe3e3/ZvjaFTPCy8ykLMFafxAEO5Zz4tThXIAxgFWjPvDHDfzlAs+/PMtQBjZEOAg=="></enclosure>
         </item>
     </channel>
-</rss>
+</rss><!-- sparkle-signatures:
+edSignature: x/MI4qXPLVac795AqVad1TSRA6gja5MVSv0oKwV8ihkoez0itmVQ6frawIudT+oEs/ZcYKZzD8Au3iZ0kHTJBQ==
+length: 3649
+-->
