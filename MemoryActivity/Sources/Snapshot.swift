@@ -54,8 +54,8 @@ extension MemoryData {
 
 extension MemoryData {
     mutating func update(with snapshot: Snapshot) {
-        if let value = snapshot.pressureValue, let level = snapshot.pressureLevel {
-            guard let level = MemoryPressure.DataPoint.Level(rawValue: level) else {
+        if let value = snapshot.pressureValue, let rawLevel = snapshot.pressureLevel {
+            guard let level = MemoryPressure.DataPoint.Level(rawValue: rawLevel) else {
                 fatalError()
             }
 
