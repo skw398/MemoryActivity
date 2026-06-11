@@ -1,5 +1,4 @@
 import SwiftUI
-import mabackend
 
 @main
 struct MemoryActivityApp: App {
@@ -11,7 +10,6 @@ struct MemoryActivityApp: App {
     init() {
         _ = OpenAtLogin.instance
         _ = Sparkle.instance
-        _ = mabackend.instance
         store = .live
     }
 

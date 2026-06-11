@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F4AF6232E50B7AA00CE2986 /* libmabackend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4AF6222E50B7A800CE2986 /* libmabackend.a */; };
-		1F4AFA1A2E50DE8F00CE2986 /* libmabackend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4AF6222E50B7A800CE2986 /* libmabackend.a */; };
 		B476E0E72DB4F45E0092B9CF /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B476E0E62DB4F45E0092B9CF /* Sparkle */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +21,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F4AF6222E50B7A800CE2986 /* libmabackend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmabackend.a; path = libmabackend/libmabackend.a; sourceTree = "<group>"; };
 		1F6619AD2E4F63F7002B15E7 /* MemoryActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48FC1152DB3AEA900E212B2 /* MemoryActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -59,13 +56,11 @@
 		1F6619AA2E4F63F7002B15E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				1F4AFA1A2E50DE8F00CE2986 /* libmabackend.a in Frameworks */,
 			);
 		};
 		B48FC1122DB3AEA900E212B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				1F4AF6232E50B7AA00CE2986 /* libmabackend.a in Frameworks */,
 				B476E0E72DB4F45E0092B9CF /* Sparkle in Frameworks */,
 			);
 		};
@@ -75,7 +70,6 @@
 		1F4AF6212E50B7A800CE2986 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F4AF6222E50B7A800CE2986 /* libmabackend.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,16 +240,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libmabackend",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryActivity";
 			};
 			name = Debug;
@@ -268,16 +257,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libmabackend",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryActivity";
 			};
 			name = Release;
@@ -442,16 +426,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libmabackend",
-				);
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 			};
 			name = Debug;
 		};
@@ -477,16 +456,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libmabackend",
-				);
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skw398.MemoryActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/libmabackend";
 			};
 			name = Release;
 		};

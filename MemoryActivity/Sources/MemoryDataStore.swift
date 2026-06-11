@@ -18,7 +18,7 @@ class MemoryDataStore {
 
     private init(memoryData: MemoryData) {
         self.memoryData = memoryData
-        memoryPressureLevel = memoryData.memoryPressure.data.last?.level
+        memoryPressureLevel = memoryData.memoryPressure.data.last??.level
     }
 
     deinit {
@@ -30,25 +30,15 @@ class MemoryDataStore {
             let clock = SuspendingClock()
 
             for await _ in clock.stream(every: .seconds(1)) {
-                update(with: MemoryData.Snapshot.current())
+                memoryData.update()
+
+                // MenuBarExtra's view rendering can easily increase CPU usage, so update data only
+                // when necessary.
+                let currentPressureLevel = memoryData.memoryPressure.data.last??.level
+                if currentPressureLevel != memoryPressureLevel {
+                    memoryPressureLevel = currentPressureLevel
+                }
             }
-        }
-    }
-
-    private func update(with snapshot: MemoryData.Snapshot) {
-        memoryData.update(with: snapshot)
-
-        guard let pressureLevel = snapshot.pressureLevel else {
-            memoryPressureLevel = nil
-            return
-        }
-
-        let level = MemoryData.PressureLevel(rawValue: pressureLevel)!
-
-        // MenuBarExtra's view rendering can easily increase CPU usage, so update data only when
-        // necessary.
-        if level != memoryPressureLevel {
-            memoryPressureLevel = level
         }
     }
 }

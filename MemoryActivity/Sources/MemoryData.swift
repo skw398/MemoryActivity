@@ -48,3 +48,63 @@ extension MemoryData.MemoryPressure {
         }
     }
 }
+
+extension MemoryData {
+    mutating func update() {
+        if let memorystatusLevel = Sysctl.kernMemorystatusLevel,
+            let vmPressureLevel = Sysctl.kernMemorystatusVMPressureLevel,
+            let pressureLevel = PressureLevel(vmPressureLevel: vmPressureLevel)
+        {
+            memoryPressure.append(
+                MemoryPressure.DataPoint(
+                    value: 100 - Int(memorystatusLevel),
+                    level: pressureLevel,
+                ),
+            )
+        }
+
+        physicalMemory = Sysctl.hwMemSize.flatMap { Int64(exactly: $0) }
+        memoryUsed = nil
+        appMemory = nil
+        wiredMemory = nil
+        compressed = nil
+        cachedFiles = nil
+        swapUsed = Sysctl.vmSwapUsed.flatMap { Int64(exactly: $0) }
+
+        guard let hwPageSize = Sysctl.hwPageSize, let vmStats = Mach.vmStatistics64 else {
+            return
+        }
+
+        let pageSize = Int64(hwPageSize)
+        let wired = Int64(vmStats.wireCount) * pageSize
+        let compressed = Int64(vmStats.compressorPageCount) * pageSize
+        let internalPages = Int64(vmStats.internalPageCount) * pageSize
+        let external = Int64(vmStats.externalPageCount) * pageSize
+        let purgeable = Int64(vmStats.purgeableCount) * pageSize
+        let free = Int64(vmStats.freeCount) * pageSize
+        let speculative = Int64(vmStats.speculativeCount) * pageSize
+
+        if let physicalMemory {
+            memoryUsed = physicalMemory - free - external + speculative
+        }
+        appMemory = internalPages - purgeable
+        wiredMemory = wired
+        self.compressed = compressed
+        cachedFiles = purgeable + external
+    }
+}
+
+extension MemoryData.PressureLevel {
+    fileprivate init?(vmPressureLevel: Int32) {
+        switch vmPressureLevel {
+        case 1:
+            self = .normal
+        case 2:
+            self = .warning
+        case 4:
+            self = .critical
+        default:
+            return nil
+        }
+    }
+}
