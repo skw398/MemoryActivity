@@ -11,19 +11,19 @@ struct MemoryData {
 
 extension MemoryData {
     struct MemoryPressure {
-        var data: [DataPoint] = []
+        var data: [DataPoint?] = []
         var capacity: Int
 
         init(capacity: Int) {
             self.capacity = capacity
         }
 
-        init(data: [DataPoint], capacity: Int) {
+        init(data: [DataPoint?], capacity: Int) {
             self.data = data
             self.capacity = capacity
         }
 
-        mutating func append(_ data: DataPoint) {
+        mutating func append(_ data: DataPoint?) {
             self.data.append(data)
             if self.data.count > capacity {
                 self.data.removeFirst()
@@ -61,6 +61,8 @@ extension MemoryData {
                     level: pressureLevel,
                 ),
             )
+        } else {
+            memoryPressure.append(nil)
         }
 
         physicalMemory = Sysctl.hwMemSize.flatMap { Int64(exactly: $0) }

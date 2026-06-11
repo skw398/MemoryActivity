@@ -7,8 +7,11 @@ struct MemoryPressureGraph: View {
 
     var body: some View {
         Canvas { context, size in
-            let data = memoryPressure.data
             let maxDataCount = memoryPressure.capacity
+
+            guard let data = memoryPressure.data.unwrapped() else {
+                return
+            }
 
             let unitWidth = size.width / CGFloat(maxDataCount - 1)
             let lineWidth = unitWidth / 4
@@ -82,6 +85,12 @@ struct MemoryPressureGraph: View {
             MemoryPressureGraph(
                 memoryPressure: MemoryData.MemoryPressure(
                     data: MemoryData.sample.memoryPressure.data.suffix(50),
+                    capacity: MemoryData.sample.memoryPressure.data.capacity,
+                ),
+            )
+            MemoryPressureGraph(
+                memoryPressure: MemoryData.MemoryPressure(
+                    data: [nil] + MemoryData.sample.memoryPressure.data.dropFirst(),
                     capacity: MemoryData.sample.memoryPressure.data.capacity,
                 ),
             )
