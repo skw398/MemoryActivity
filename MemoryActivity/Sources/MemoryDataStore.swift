@@ -3,7 +3,12 @@ import Observation
 @MainActor
 @Observable
 class MemoryDataStore {
-    private(set) var memoryData: MemoryData
+    var memoryData: MemoryData {
+        didSet {
+            memoryPressureLevel = memoryData.memoryPressure.data.last??.level
+        }
+    }
+
     private(set) var memoryPressureLevel: MemoryData.PressureLevel?
 
     static let live: MemoryDataStore = {
@@ -16,13 +21,9 @@ class MemoryDataStore {
 
     static let sample = MemoryDataStore(memoryData: MemoryData.sample)
 
-    private init(memoryData: MemoryData) {
+    init(memoryData: MemoryData) {
         self.memoryData = memoryData
         memoryPressureLevel = memoryData.memoryPressure.data.last??.level
-    }
-
-    deinit {
-        fatalError()
     }
 
     private func activate() {
@@ -31,13 +32,6 @@ class MemoryDataStore {
 
             for await _ in clock.stream(every: .seconds(1)) {
                 memoryData.update()
-
-                // MenuBarExtra's view rendering can easily increase CPU usage, so update data only
-                // when necessary.
-                let currentPressureLevel = memoryData.memoryPressure.data.last??.level
-                if currentPressureLevel != memoryPressureLevel {
-                    memoryPressureLevel = currentPressureLevel
-                }
             }
         }
     }
