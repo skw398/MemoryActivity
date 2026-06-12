@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: ${{ matrix.test-plan }}
+    runs-on: macos-26
+    strategy:
+      fail-fast: false
+      matrix:
+        test-plan:
+          - MemoryActivity
+          - MultiLanguages
+          - Integration
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set Up
+        run: |
+          sw_vers
+          sudo xcode-select -s /Applications/Xcode_26.5.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Run ${{ matrix.test-plan }}
+        run: |
+          xcodebuild test \
+            -scheme MemoryActivity \
+            -project MemoryActivity.xcodeproj \
+            -testPlan "${{ matrix.test-plan }}" \
+            -destination 'platform=macOS,arch=arm64' \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-${{ matrix.test-plan }}"
