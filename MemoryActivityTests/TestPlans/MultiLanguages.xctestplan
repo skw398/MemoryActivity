@@ -28,10 +28,7 @@
       "selectedTests" : {
         "suites" : [
           {
-            "name" : "ByteCountFormatTests",
-            "testFunctions" : [
-              "`formatted byte counts match expected strings`()"
-            ]
+            "name" : "ByteCountFormatTests"
           }
         ]
       },
