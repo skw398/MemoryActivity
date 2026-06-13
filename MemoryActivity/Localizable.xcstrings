@@ -59,13 +59,13 @@
             "value" : "Μνήμη εφαρμογής:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Memory:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Memory:"
@@ -77,13 +77,13 @@
             "value" : "Memoria de apps:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria de aplicaciones:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria de aplicaciones:"
@@ -101,7 +101,7 @@
             "value" : "Mémoire de l’application :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mémoire de l’application :"
@@ -179,13 +179,13 @@
             "value" : "Pamięć aplikacji:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória de App:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória das aplicações:"
@@ -245,19 +245,19 @@
             "value" : "Bộ nhớ ứng dụng:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App内存："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App記憶體："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App記憶體："
@@ -333,13 +333,13 @@
             "value" : "Αρχεία στη μνήμη cache:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cached Files:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cached Files:"
@@ -351,13 +351,13 @@
             "value" : "Archivos guardados en caché:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Archivos en caché:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Archivos en caché:"
@@ -375,7 +375,7 @@
             "value" : "Fichiers mis en cache :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fichiers mis en cache :"
@@ -453,13 +453,13 @@
             "value" : "Pliki w pamięci podręcznej:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arquivos em Cache:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ficheiros em cache:"
@@ -519,19 +519,19 @@
             "value" : "Tệp được ghi vào bộ nhớ đệm:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "已缓存文件："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "快取的檔案："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "快取的檔案："
@@ -587,13 +587,13 @@
             "value" : "Συμπιεσμένη:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compressed:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compressed:"
@@ -605,13 +605,13 @@
             "value" : "Comprimida:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprimido:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprimido:"
@@ -629,7 +629,7 @@
             "value" : "Compressée :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compressée :"
@@ -707,13 +707,13 @@
             "value" : "Skompresowana:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprimido:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprimida:"
@@ -773,19 +773,19 @@
             "value" : "Đã nén:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "被压缩："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "已壓縮："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "已壓縮："
@@ -831,13 +831,13 @@
             "value" : "ΠΙΕΣΗ ΜΝΗΜΗΣ"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MEMORY PRESSURE"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MEMORY PRESSURE"
@@ -849,13 +849,13 @@
             "value" : "PRESIÓN DE MEMORIA"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRESIÓN DE MEMORIA"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRESIÓN DE MEMORIA"
@@ -873,7 +873,7 @@
             "value" : "PRESSION SUR LA MÉMOIRE"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRESSION SUR LA MÉMOIRE"
@@ -951,13 +951,13 @@
             "value" : "WYKORZYSTANIE PAMIĘCI"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRESSÃO DA MEMÓRIA"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DÉFICE DE MEMÓRIA"
@@ -1017,19 +1017,19 @@
             "value" : "ÁP LỰC BỘ NHỚ"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "内存压力"
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "記憶體壓力"
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "記憶體壓力"
@@ -1075,13 +1075,13 @@
             "value" : "Μνήμη που χρησιμοποιείται:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memory Used:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memory Used:"
@@ -1093,13 +1093,13 @@
             "value" : "Memoria usada:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria usada:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria usada:"
@@ -1117,7 +1117,7 @@
             "value" : "Mémoire utilisée :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mémoire utilisée :"
@@ -1195,13 +1195,13 @@
             "value" : "Pamięć użyta:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória Usada:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória usada:"
@@ -1261,19 +1261,19 @@
             "value" : "Bộ nhớ được dùng:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "已使用内存："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "記憶體用量："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "記憶體用量："
@@ -1339,13 +1339,13 @@
             "value" : "μ/δ"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/a"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/a"
@@ -1357,13 +1357,13 @@
             "value" : "n/d"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
@@ -1381,7 +1381,7 @@
             "value" : "n/d"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
@@ -1459,13 +1459,13 @@
             "value" : "-"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/d"
@@ -1525,19 +1525,19 @@
             "value" : "không có"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "不详"
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "無"
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "無"
@@ -1603,13 +1603,13 @@
             "value" : "Φυσική μνήμη:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Physical Memory:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Physical Memory:"
@@ -1621,13 +1621,13 @@
             "value" : "Memoria física:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria física:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria física:"
@@ -1645,7 +1645,7 @@
             "value" : "Mémoire physique :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mémoire physique :"
@@ -1723,13 +1723,13 @@
             "value" : "Pamięć fizyczna:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória Física:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória física:"
@@ -1789,19 +1789,19 @@
             "value" : "Bộ nhớ thực:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "物理内存："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "實體記憶體："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "實體記憶體："
@@ -1877,13 +1877,13 @@
             "value" : "Χρήση χώρου swap:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swap Used:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swap Used:"
@@ -1895,13 +1895,13 @@
             "value" : "Espacio de intercambio usado:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espacio de intercambio usado:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espacio de intercambio usado:"
@@ -1919,7 +1919,7 @@
             "value" : "Fichier d’échange utilisé :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fichier d’échange utilisé :"
@@ -1997,13 +1997,13 @@
             "value" : "Pamięć wymiany:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Troca Usada:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swap utilizado:"
@@ -2063,19 +2063,19 @@
             "value" : "Mức hoán đổi được dùng:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "已使用的交换："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用的交換檔："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用的交換檔："
@@ -2131,13 +2131,13 @@
             "value" : "Καλωδιωμένη μνήμη:"
           }
         },
-        "en_AU" : {
+        "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wired Memory:"
           }
         },
-        "en_GB" : {
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wired Memory:"
@@ -2149,13 +2149,13 @@
             "value" : "Memoria física:"
           }
         },
-        "es_419" : {
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria residente:"
           }
         },
-        "es_US" : {
+        "es-US" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memoria residente:"
@@ -2173,7 +2173,7 @@
             "value" : "Mémoire résidente :"
           }
         },
-        "fr_CA" : {
+        "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mémoire résidente :"
@@ -2251,13 +2251,13 @@
             "value" : "Pamięć układowa:"
           }
         },
-        "pt_BR" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória Residente:"
           }
         },
-        "pt_PT" : {
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memória integrada:"
@@ -2317,19 +2317,19 @@
             "value" : "Bộ nhớ lõi hệ thống:"
           }
         },
-        "zh_CN" : {
+        "zh-CN" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "联动内存："
           }
         },
-        "zh_HK" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "系統核心記憶體："
           }
         },
-        "zh_TW" : {
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "系統核心記憶體："
