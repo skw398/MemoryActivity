@@ -15,7 +15,7 @@
     {
       "selectedTests" : {
         "testFunctions" : [
-          "`menu bar extra toggles and memory data is populated`()"
+          "`memory data is populated`()"
         ]
       },
       "target" : {

@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct AppMenu: View {
+    @Environment(\.dismiss)
+    private var dismiss
+
     @Environment(\.openSettings)
     private var openSettings
 
@@ -8,7 +11,7 @@ struct AppMenu: View {
         Menu {
             Section {
                 Button {
-                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
+                    dismiss()
                     NSApp.activate(ignoringOtherApps: true)
 
                     NSApp.orderFrontStandardAboutPanel(nil)
@@ -18,7 +21,7 @@ struct AppMenu: View {
                 }
 
                 Button {
-                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
+                    dismiss()
 
                     Sparkle.instance.checkForUpdates()
                 } label: {
@@ -36,7 +39,7 @@ struct AppMenu: View {
 
             Section {
                 Button {
-                    NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
+                    dismiss()
                     NSApp.activate(ignoringOtherApps: true)
 
                     openSettings()
@@ -52,7 +55,7 @@ struct AppMenu: View {
                     withBundleIdentifier: "com.apple.ActivityMonitor",
                 ) {
                     Button("Open Activity Monitor") {
-                        NSApp.menuBarExtraStatusItem?.button?.performClickSilently()
+                        dismiss()
 
                         NSWorkspace.shared.openApplication(at: url, configuration: .init())
                     }
