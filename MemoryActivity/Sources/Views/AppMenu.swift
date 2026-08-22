@@ -10,26 +10,17 @@ struct AppMenu: View {
     var body: some View {
         Menu {
             Section {
-                Button {
+                Button("About MemoryActivity") {
                     dismiss()
                     NSApp.activate(ignoringOtherApps: true)
 
                     NSApp.orderFrontStandardAboutPanel(nil)
-                } label: {
-                    Label("About MemoryActivity", systemImage: "info.circle")
-                        .labelStyle(.osAdaptiveMenuItem)
                 }
 
-                Button {
+                Button("Check for Updates…") {
                     dismiss()
 
                     Sparkle.instance.checkForUpdates()
-                } label: {
-                    Label(
-                        "Check for Updates…",
-                        systemImage: "arrow.trianglehead.2.clockwise.rotate.90",
-                    )
-                    .labelStyle(.osAdaptiveMenuItem)
                 }
                 .badge(
                     Sparkle.instance.shouldDeliverGentleScheduledUpdateReminder ? "1 update" : nil,
@@ -44,8 +35,12 @@ struct AppMenu: View {
 
                     openSettings()
                 } label: {
-                    Label("Settings…", systemImage: "gear")
-                        .labelStyle(.osAdaptiveMenuItem)
+                    if macOS26Available {
+                        Label("Settings…", systemImage: "gear")
+                            .labelStyle(.titleAndIcon)
+                    } else {
+                        Text("Settings…")
+                    }
                 }
                 .keyboardShortcut(",")
             }
@@ -63,11 +58,8 @@ struct AppMenu: View {
             }
 
             Section {
-                Button {
+                Button("Quit MemoryActivity") {
                     NSApp.terminate(nil)
-                } label: {
-                    Label("Quit MemoryActivity", systemImage: "xmark.rectangle")
-                        .labelStyle(.osAdaptiveMenuItem)
                 }
                 .keyboardShortcut("q")
             }
@@ -77,26 +69,6 @@ struct AppMenu: View {
         }
         .menuStyle(.borderlessButton)
         .fixedSize()
-    }
-}
-
-extension LabelStyle where Self == AppMenu.OSAdaptiveMenuItemLabelStyle {
-    fileprivate static var osAdaptiveMenuItem: Self {
-        Self()
-    }
-}
-
-extension AppMenu {
-    fileprivate struct OSAdaptiveMenuItemLabelStyle: LabelStyle {
-        func makeBody(configuration: Configuration) -> some View {
-            if macOS26Available {
-                Label(configuration)
-                    .labelStyle(.titleAndIcon)
-            } else {
-                Label(configuration)
-                    .labelStyle(.titleOnly)
-            }
-        }
     }
 }
 
