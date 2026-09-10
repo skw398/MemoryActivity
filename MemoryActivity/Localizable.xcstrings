@@ -65,7 +65,25 @@
             "value" : "App Memory:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Memory:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Memory:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Memory:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Memory:"
@@ -339,7 +357,25 @@
             "value" : "Cached Files:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cached Files:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cached Files:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cached Files:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cached Files:"
@@ -593,7 +629,25 @@
             "value" : "Compressed:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compressed:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compressed:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compressed:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compressed:"
@@ -837,7 +891,25 @@
             "value" : "MEMORY PRESSURE"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MEMORY PRESSURE"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MEMORY PRESSURE"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MEMORY PRESSURE"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MEMORY PRESSURE"
@@ -1081,7 +1153,25 @@
             "value" : "Memory Used:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memory Used:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memory Used:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memory Used:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memory Used:"
@@ -1345,7 +1435,25 @@
             "value" : "n/a"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n/a"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n/a"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n/a"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n/a"
@@ -1609,7 +1717,25 @@
             "value" : "Physical Memory:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Physical Memory:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Physical Memory:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Physical Memory:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Physical Memory:"
@@ -1883,7 +2009,25 @@
             "value" : "Swap Used:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap Used:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap Used:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap Used:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swap Used:"
@@ -1976,7 +2120,7 @@
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Silih Digunakan:"
+            "value" : "Tukar Digunakan:"
           }
         },
         "nb" : {
@@ -2137,7 +2281,25 @@
             "value" : "Wired Memory:"
           }
         },
+        "en-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wired Memory:"
+          }
+        },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wired Memory:"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wired Memory:"
+          }
+        },
+        "en-PH" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wired Memory:"

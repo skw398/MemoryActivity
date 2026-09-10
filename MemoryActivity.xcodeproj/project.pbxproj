@@ -203,6 +203,9 @@
 				"zh-CN",
 				"zh-HK",
 				"zh-TW",
+				"en-CA",
+				"en-IN",
+				"en-PH",
 			);
 			mainGroup = B48FC10C2DB3AEA900E212B2;
 			minimizedProjectReferenceProxies = 1;
