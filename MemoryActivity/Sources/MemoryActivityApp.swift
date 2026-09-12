@@ -2,9 +2,6 @@ import SwiftUI
 
 @main
 struct MemoryActivityApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self)
-    var appDelegate
-
     let store: MemoryDataStore
 
     init() {
@@ -24,14 +21,6 @@ struct MemoryActivityApp: App {
 
         Settings {
             AppSettings()
-        }
-    }
-}
-
-extension MemoryActivityApp {
-    class AppDelegate: NSObject, NSApplicationDelegate {
-        func applicationDidFinishLaunching(_: Notification) {
-            _ = KeyWindowObserver.instance
         }
     }
 }

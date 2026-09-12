@@ -8,7 +8,10 @@ Memory pressure and stats from Activity Monitor — right in your menu bar!
 
 Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/download/1.0.4/MemoryActivity.dmg)
 
-- Requires macOS 14 Sonoma or later
+- Supported versions:
+  - macOS 15 Sequoia
+  - macOS 26 Tahoe
+  - macOS 27 Golden Gate
 - Notarized by Apple
 - Protected by the macOS App Sandbox
 

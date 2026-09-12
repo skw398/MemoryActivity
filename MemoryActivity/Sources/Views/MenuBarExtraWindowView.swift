@@ -10,13 +10,10 @@ struct MenuBarExtraWindowView: View {
     }
 
     var body: some View {
-        let shouldShowMemoryData =
-            macOS15Available ? isVisible : KeyWindowObserver.instance.value != nil
-
         VStack(alignment: .trailing, spacing: 8) {
             // MenuBarExtra's view rendering can easily increase CPU usage, so pass data only when
             // necessary.
-            MemoryDataView(memoryData: shouldShowMemoryData ? store.memoryData : .empty)
+            MemoryDataView(memoryData: isVisible ? store.memoryData : .empty)
                 .padding(macOS26Available ? 8 : 6)
                 .background(.background, in: .rect(cornerRadius: macOS26Available ? 12 : 4))
                 .overlay(
