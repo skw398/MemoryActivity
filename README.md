@@ -6,7 +6,7 @@ Memory pressure and stats from Activity Monitor — right in your menu bar!
 
 ## Installation
 
-Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/download/1.0.4/MemoryActivity.dmg)
+Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/download/1.0.5/MemoryActivity.dmg)
 
 - Supported versions:
   - macOS 15 Sequoia
@@ -17,5 +17,5 @@ Download [MemoryActivity.dmg](https://github.com/skw398/MemoryActivity/releases/
 
 ## Build
 
-1. Open `MemoryActivity.xcodeproj` in Xcode 26.4
+1. Open `MemoryActivity.xcodeproj` in Xcode 27.0
 1. Run
