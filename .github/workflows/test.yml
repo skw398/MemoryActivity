@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: ${{ matrix.test-plan }}
-    runs-on: macos-26
+    runs-on: xcode-27
     strategy:
       fail-fast: false
       matrix:
@@ -24,7 +24,6 @@ jobs:
       - name: Set Up
         run: |
           sw_vers
-          sudo xcode-select -s /Applications/Xcode_26.5.app/Contents/Developer
           xcodebuild -version
 
       - name: Run ${{ matrix.test-plan }}
