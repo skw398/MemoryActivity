@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.5
+
+- Add support for macOS 27 Golden Gate
+- Drop support for macOS 14 Sonoma
+- Apply system localizations for macOS 27.0
+- Update build environment to Xcode 27.0
+- Update Sparkle package to 2.9.6
+- Internal improvements
+
 ## 1.0.4
 
 - Add icon to quit menu item
